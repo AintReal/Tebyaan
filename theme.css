@@ -1,0 +1,80 @@
+/* Basiqaat theme – simple, clean, no gradients */
+:root {
+  /* Global brand tokens aligned with the logo palette */
+  --color-primary: #0f5a4a; /* deep logo green */
+  --color-accent: #a07a47;  /* logo gold/brown */
+  --color-white: #ffffff;
+  --color-text: #1f2937;    /* gray-800 */
+  --color-muted: #f5f5f5;   /* light bg */
+}
+
+/* Utilities */
+.text-primary { color: var(--color-primary) !important; }
+.bg-primary { background-color: var(--color-primary) !important; }
+.border-primary { border-color: var(--color-primary) !important; }
+.text-accent { color: var(--color-accent) !important; }
+.bg-accent { background-color: var(--color-accent) !important; }
+.border-accent { border-color: var(--color-accent) !important; }
+
+.btn-primary {
+  background-color: var(--color-primary) !important;
+  color: var(--color-white) !important;
+}
+.btn-primary:hover { background-color: #0c4b3d !important; }
+.btn-accent {
+  background-color: var(--color-accent) !important;
+  color: var(--color-white) !important;
+}
+.btn-accent:hover { background-color: #8f6f3a !important; }
+
+/* Map legacy inline utilities to new brand (so we don't have to edit every class) */
+/* Old emerald (#00a17d) -> primary */
+.text-\[\#00a17d\] { color: var(--color-primary) !important; }
+.bg-\[\#00a17d\] { background-color: var(--color-primary) !important; }
+.hover\:text-\[\#00a17d\]:hover { color: var(--color-primary) !important; }
+.hover\:\bg-\[\#00a17d\]\/10:hover { background-color: rgba(15, 90, 74, 0.10) !important; }
+.hover\:\bg-\[\#00a17d\]\/5:hover { background-color: rgba(15, 90, 74, 0.05) !important; }
+.hover\:border-\[\#00a17d\]\/20:hover { border-color: rgba(15, 90, 74, 0.20) !important; }
+.border-\[\#00a17d\]\/20 { border-color: rgba(15, 90, 74, 0.20) !important; }
+.border-\[\#00a17d\]\/10 { border-color: rgba(15, 90, 74, 0.10) !important; }
+
+/* Old gold (#efb740) -> accent */
+.text-\[\#efb740\] { color: var(--color-accent) !important; }
+.bg-\[\#efb740\] { background-color: var(--color-accent) !important; }
+.hover\:text-\[\#efb740\]:hover { color: var(--color-accent) !important; }
+.hover\:bg-\[\#efb740\]:hover { background-color: var(--color-accent) !important; }
+
+/* Curved underline brand colors */
+.curved-underline.gold::after { background: var(--color-accent) !important; }
+.curved-underline.green::after { background: var(--color-primary) !important; }
+.curved-underline.brown::after { background: var(--color-primary) !important; }
+
+/* Components */
+.phone-contact-card:hover { box-shadow: 0 4px 12px rgba(15, 90, 74, 0.15) !important; }
+.mobile-phone-contact { background-color: rgba(15, 90, 74, 0.06) !important; }
+.mobile-phone-contact:hover { color: var(--color-primary) !important; }
+
+/* Carousel dots brand */
+.carousel-dot.active { background: var(--color-accent) !important; border-color: var(--color-accent) !important; }
+.carousel-dot:hover { border-color: var(--color-accent) !important; }
+
+/* Scroll-to-top button unified */
+.scroll-to-top { background-color: var(--color-primary) !important; }
+.scroll-to-top:hover { background-color: #0c4b3d !important; }
+
+/* Footer links hover */
+footer a:hover { color: var(--color-accent) !important; }
+
+/* Simple image placeholders */
+.image-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed var(--color-accent);
+  color: var(--color-primary);
+  background: var(--color-white);
+  border-radius: 0.5rem;
+  font-weight: 700;
+}
+.image-placeholder.small { height: 180px; }
+.image-placeholder.banner { height: 360px; }

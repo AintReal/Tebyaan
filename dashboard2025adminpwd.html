@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم - جمعية تبيان لخدمة ضيوف الرحمن</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="theme.css">
+    <!-- Database Configuration and Service -->
+    <script src="db-config.js"></script>
+    <script src="database-service.js"></script>
+    <style>
+        :root {
+            --color-primary: #0f5a4a;   /* logo deep green */
+            --color-accent:  #a07a47;   /* logo gold/brown */
+        }
+        @font-face {
+            font-family: 'IBMPlexSansArabic';
+            src: url('fonts/IBMPlexSansArabic-Regular.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        @font-face {
+            font-family: 'IBMPlexSansArabic';
+            src: url('fonts/IBMPlexSansArabic-Medium.ttf') format('truetype');
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        body {
+            font-family: 'IBMPlexSansArabic', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: 500;
+        }
+        
+        /* Use medium weight for most UI elements */
+        .font-medium, h1, h2, h3, h4, h5, h6, button {
+            font-weight: 500;
+        }
+        
+        .sidebar-active {
+            background-color: var(--color-primary) !important;
+            color: white !important;
+        }
+
+        /* Map old maroon/gold utilities to the new brand palette (non-breaking) */
+        .bg-\[\#6e1948\] { background-color: var(--color-primary) !important; }
+        .hover\:bg-\[\#6e1948\]:hover { background-color: var(--color-primary) !important; filter: brightness(0.95); }
+        .hover\:bg-\[\#6e1948\]\/90:hover { background-color: color-mix(in srgb, var(--color-primary) 90%, black) !important; }
+        .text-\[\#6e1948\] { color: var(--color-primary) !important; }
+        .hover\:text-\[\#efb740\]:hover { color: var(--color-accent) !important; }
+        .bg-\[\#6e1948\]\/10 { background-color: color-mix(in srgb, var(--color-primary) 10%, transparent) !important; }
+        .border-\[\#6e1948\]\/30 { border-color: color-mix(in srgb, var(--color-primary) 30%, transparent) !important; }
+        .focus\:ring-\[\#6e1948\]:focus { box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 35%, transparent) !important; border-color: color-mix(in srgb, var(--color-primary) 50%, transparent) !important; outline: none; }
+        
+        .news-item {
+            transition: all 0.3s ease;
+        }
+        
+        .news-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        /* Mobile Responsive Styles */
+        .sidebar {
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .sidebar-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 40;
+        }
+        
+        @media (max-width: 768px) {
+            .sidebar {
+                position: fixed;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                z-index: 50;
+                transform: translateX(-100%);
+            }
+            
+            .sidebar.open {
+                transform: translateX(0);
+            }
+            
+            .sidebar-overlay.active {
+                display: block;
+            }
+            
+            .main-content {
+                margin-left: 0 !important;
+                width: 100% !important;
+            }
+            
+            .mobile-header {
+                display: flex !important;
+            }
+            
+            .dashboard-form {
+                padding: 1rem !important;
+            }
+            
+            .dashboard-form .grid {
+                grid-template-columns: 1fr !important;
+                gap: 1rem !important;
+            }
+            
+            .dashboard-form input,
+            .dashboard-form textarea,
+            .dashboard-form select {
+                font-size: 16px; /* Prevent zoom on iOS */
+            }
+            
+            .news-item {
+                margin-bottom: 1rem;
+            }
+            
+            .news-item .flex {
+                flex-direction: column !important;
+                gap: 1rem;
+            }
+            
+            .news-item .flex > div:last-child {
+                flex-direction: row !important;
+                justify-content: space-between;
+            }
+        }
+        
+        .mobile-header {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Mobile Header -->
+    <div class="mobile-header bg-white shadow-md p-4 justify-between items-center md:hidden">
+        <div class="flex items-center">
+            <button id="mobile-menu-btn" class="text-gray-600 hover:text-gray-800 focus:outline-none mr-4">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+            <h1 class="text-lg font-bold text-gray-800">لوحة التحكم</h1>
+        </div>
+                        <a href="/" class="text-gray-600 hover:text-gray-800">
+            <i class="fas fa-home text-xl"></i>
+        </a>
+    </div>
+
+    <!-- DB Connection Status (non-intrusive) -->
+    <div id="db-status" class="fixed top-4 left-4 z-50 px-3 py-1 rounded-md text-xs font-medium bg-gray-200 text-gray-700 shadow">
+        جارٍ التحقق من الاتصال…
+    </div>
+
+    <!-- Sidebar Overlay -->
+    <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+    <!-- Dashboard Container -->
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <div id="sidebar" class="sidebar w-64 bg-white shadow-lg">
+            <div class="p-6 border-b">
+                <h2 class="text-xl font-bold text-gray-800">لوحة التحكم</h2>
+                <p class="text-gray-600 text-sm">جمعية تبيان لخدمة ضيوف الرحمن</p>
+            </div>
+            
+            <nav class="mt-6">
+                <a href="#" class="sidebar-link sidebar-active flex items-center px-6 py-3 text-gray-700 hover:bg-[#6e1948] hover:text-white transition-colors" data-section="news">
+                    <i class="fas fa-newspaper ml-3"></i>
+                    إدارة الأخبار
+                </a>
+                <a href="#" class="sidebar-link flex items-center px-6 py-3 text-gray-700 hover:bg-[#6e1948] hover:text-white transition-colors" data-section="carousel">
+                    <i class="fas fa-images ml-3"></i>
+                    إدارة صور الواجهة
+                </a>
+                <a href="#" class="sidebar-link flex items-center px-6 py-3 text-gray-700 hover:bg-[#6e1948] hover:text-white transition-colors" data-section="settings">
+                    <i class="fas fa-cog ml-3"></i>
+                    الإعدادات
+                </a>
+            </nav>
+            
+            <div class="absolute bottom-6 left-6 right-6">
+                <a href="/" class="flex items-center justify-center px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors">
+                    <i class="fas fa-home ml-2"></i>
+                    العودة للموقع
+                </a>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content flex-1 overflow-y-auto pt-0 md:pt-0">
+            <!-- News Management Section -->
+            <div id="news-section" class="section p-4 md:p-8">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 md:mb-8 gap-4">
+                    <h1 class="text-2xl md:text-3xl font-bold text-gray-800">إدارة الأخبار</h1>
+                    <button id="add-news-btn" class="bg-[#6e1948] text-white px-4 md:px-6 py-2 md:py-3 rounded-lg hover:bg-[#6e1948]/90 transition-colors flex items-center text-sm md:text-base w-full md:w-auto justify-center">
+                        <i class="fas fa-plus ml-2"></i>
+                        إضافة خبر جديد
+                    </button>
+                </div>
+
+                <!-- News List -->
+                <div id="news-list" class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6">
+                    <!-- News items will be loaded here -->
+                </div>
+            </div>
+
+            <!-- Carousel Management Section -->
+            <div id="carousel-section" class="section hidden p-4 md:p-8">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 md:mb-8 gap-4">
+                    <h1 class="text-2xl md:text-3xl font-bold text-gray-800">إدارة صور الواجهة</h1>
+                    <button id="add-carousel-image-btn" class="bg-[#6e1948] text-white px-4 md:px-6 py-2 md:py-3 rounded-lg hover:bg-[#6e1948]/90 transition-colors flex items-center text-sm md:text-base w-full md:w-auto justify-center">
+                        <i class="fas fa-plus ml-2"></i>
+                        إضافة صورة جديدة
+                    </button>
+                </div>
+
+                <!-- Carousel Images Grid -->
+                <div id="carousel-images-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                    <!-- Carousel images will be loaded here -->
+                </div>
+            </div>
+
+            <!-- Settings Section -->
+            <div id="settings-section" class="section hidden p-4 md:p-8">
+                <h1 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6 md:mb-8">الإعدادات</h1>
+                
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">إعدادات النظام</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="bg-red-50 border border-red-200 rounded-lg p-4">
+                            <h4 class="text-lg font-medium text-red-800 mb-3">إدارة البيانات</h4>
+                            <button id="clear-all-news" class="bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-colors w-full">
+                                <i class="fas fa-trash ml-2"></i>
+                                حذف جميع الأخبار
+                            </button>
+                            <p class="text-sm text-red-600 mt-2">سيتم حذف جميع الأخبار نهائياً ولا يمكن التراجع عن هذا الإجراء</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add/Edit News Modal -->
+    <div id="news-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+        <div class="bg-white rounded-lg p-8 w-full max-w-2xl mx-4 max-h-[90vh] overflow-y-auto">
+            <div class="flex justify-between items-center mb-6">
+                <h2 id="modal-title" class="text-2xl font-bold text-gray-800">إضافة خبر جديد</h2>
+                <button id="close-modal" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            
+            <form id="news-form" class="space-y-6">
+                <input type="hidden" id="news-id" value="">
+                
+                <div>
+                    <label class="block text-gray-700 font-medium mb-2">عنوان الخبر *</label>
+                    <input type="text" id="news-title" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#6e1948]">
+                </div>
+                
+                <div>
+                    <label class="block text-gray-700 font-medium mb-2">النص الرئيسي *</label>
+                    <textarea id="news-main-text" required rows="5" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#6e1948]" placeholder="اكتب النص الكامل للخبر. سيتم عرض أول 150 حرف مع زر 'اقرأ المزيد' إذا كان النص أطول."></textarea>
+                    <div class="text-sm text-gray-500 mt-1">
+                        <span id="char-count">0</span> حرف
+                    </div>
+                </div>
+                
+                <div>
+                    <label class="block text-gray-700 font-medium mb-2">تاريخ النشر *</label>
+                    <input type="date" id="news-date" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#6e1948]">
+                </div>
+                
+                <div>
+                    <label class="block text-gray-700 font-medium mb-2">صورة الخبر</label>
+                    <input type="file" id="news-image" accept="image/*" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#6e1948]">
+                    <div id="image-preview" class="mt-3 hidden">
+                        <img id="preview-img" src="" alt="معاينة الصورة" class="w-32 h-32 object-cover rounded-lg border">
+                        <button type="button" id="remove-image" class="mt-2 text-red-600 text-sm hover:underline">إزالة الصورة</button>
+                    </div>
+                    <p class="text-gray-500 text-xs mt-1">الحجم الموصى به: حتى 2 ميجابايت قبل الرفع، ويتم ضغطها تلقائياً إلى جودة عالية (حتى 1600×1200). للحصول على أفضل النتائج، استخدم الصور الموجودة:</p>
+                    <select id="existing-images" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#6e1948] mt-2">
+                        <option value="">اختر صورة موجودة</option>
+                        <option value="assets/mthani1.jpg">mthani1.jpg</option>
+                        <option value="assets/mthani2.jpg">mthani2.jpg</option>
+                        <option value="assets/mthani3.jpg">mthani3.jpg</option>
+                        <option value="assets/mthani4.jpg">mthani4.jpg</option>
+                        <option value="assets/mthaniLogo.jpg">mthaniLogo.jpg</option>
+                        <option value="assets/mthaniLogo2.jpg">mthaniLogo2.jpg</option>
+                        <option value="assets/mthaniLogo3.jpg">mthaniLogo3.jpg</option>
+                    </select>
+                </div>
+                
+                <div class="flex justify-end space-x-4 space-x-reverse">
+                    <button type="button" id="cancel-btn" class="px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors">
+                        إلغاء
+                    </button>
+                    <button type="submit" class="px-6 py-3 bg-[#6e1948] text-white rounded-lg hover:bg-[#6e1948]/90 transition-colors">
+                        <i class="fas fa-save ml-2"></i>
+                        حفظ
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add/Edit Carousel Image Modal -->
+    <div id="carousel-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+        <div class="bg-white rounded-lg p-8 w-full max-w-lg mx-4 max-h-[90vh] overflow-y-auto">
+            <div class="flex justify-between items-center mb-6">
+                <h2 id="carousel-modal-title" class="text-2xl font-bold text-gray-800">إضافة صورة جديدة</h2>
+                <button id="close-carousel-modal" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            
+            <form id="carousel-form" class="space-y-6">
+                <input type="hidden" id="carousel-image-id" value="">
+                
+                <div>
+                    <label class="block text-gray-700 font-medium mb-2">صورة الواجهة *</label>
+                    <input type="file" id="carousel-image-upload" accept="image/*" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#6e1948]">
+                    <div id="carousel-image-preview" class="mt-3 hidden">
+                        <img id="carousel-preview-img" src="" alt="معاينة الصورة" class="w-full h-48 object-cover rounded-lg border">
+                    </div>
+                    <p class="text-gray-500 text-xs mt-1">الحد الأقصى: 2 ميجابايت. الأبعاد المثلى: 1920x1080</p>
+                </div>
+                
+                <div>
+                    <label class="block text-gray-700 font-medium mb-2">النص البديل</label>
+                    <input type="text" id="carousel-alt-text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#6e1948]" placeholder="وصف مختصر للصورة">
+                </div>
+                
+                <div>
+                    <label class="block text-gray-700 font-medium mb-2">ترتيب العرض</label>
+                    <input type="number" id="carousel-sort-order" min="0" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#6e1948]" placeholder="0">
+                </div>
+                
+                <div class="flex items-center">
+                    <input type="checkbox" id="carousel-is-active" checked class="w-4 h-4 text-[#6e1948] border-gray-300 rounded focus:ring-[#6e1948]">
+                    <label for="carousel-is-active" class="mr-2 text-gray-700">عرض في الواجهة</label>
+                </div>
+                
+                <div class="flex justify-end space-x-4 space-x-reverse">
+                    <button type="button" id="cancel-carousel-btn" class="px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors">
+                        إلغاء
+                    </button>
+                    <button type="submit" class="px-6 py-3 bg-[#6e1948] text-white rounded-lg hover:bg-[#6e1948]/90 transition-colors">
+                        <i class="fas fa-save ml-2"></i>
+                        حفظ
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // ========== SITE MANAGEMENT & ERROR HANDLING ==========
+        // Global error handler (only for critical errors)
+        window.onerror = function(message, source, lineno, colno, error) {
+            console.error('Dashboard JavaScript Error:', { message, source, lineno, colno, error });
+            // Only redirect on critical errors
+            if (message.includes('Script error') || message.includes('Network Error') || message.includes('Cannot read property')) {
+                setTimeout(() => {
+                    window.location.href = 'error.html?code=dashboard&msg=' + encodeURIComponent(message);
+                }, 3000);
+            }
+            return false;
+        };
+
+        // Unhandled promise rejection handler (only for critical rejections)
+        window.addEventListener('unhandledrejection', function(event) {
+            console.error('Dashboard Promise Rejection:', event.reason);
+            // Only redirect on critical promise rejections
+            if (event.reason && (event.reason.toString().includes('Network') || event.reason.toString().includes('Failed to fetch'))) {
+                setTimeout(() => {
+                    window.location.href = 'error.html?code=dashboard-promise&msg=' + encodeURIComponent(event.reason);
+                }, 3000);
+            }
+        });
+
+        // Dashboard functionality
+        class NewsDashboard {
+            constructor() {
+                this.news = [];
+                this.currentUploadedImage = null;
+                this.init();
+            }
+
+            async init() {
+                this.setupEventListeners();
+                
+                // Test database connection first
+                try {
+                    await databaseService.testConnection();
+                    // Database connected
+                    const dbStatus = document.getElementById('db-status');
+                    if (dbStatus) {
+                        dbStatus.textContent = 'متصل بقاعدة البيانات';
+                        dbStatus.classList.remove('bg-gray-200','text-gray-700');
+                        dbStatus.classList.add('bg-[#6e1948]/10','text-[#6e1948]','border','border-[#6e1948]/30');
+                    }
+                } catch (error) {
+                    console.error('Database connection failed:', error);
+                    this.showErrorMessage('فشل الاتصال بقاعدة البيانات');
+                    const dbStatus = document.getElementById('db-status');
+                    if (dbStatus) {
+                        dbStatus.textContent = 'فشل الاتصال بقاعدة البيانات';
+                        dbStatus.classList.remove('bg-gray-200','text-gray-700');
+                        dbStatus.classList.add('bg-red-100','text-red-700','border','border-red-300');
+                    }
+                }
+                
+                await this.loadNews();
+                this.setDefaultDate();
+            }
+
+            setupEventListeners() {
+                // Sidebar navigation
+                document.querySelectorAll('.sidebar-link').forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        this.switchSection(link.dataset.section);
+                    });
+                });
+
+                // Modal controls
+                document.getElementById('add-news-btn').addEventListener('click', () => this.openModal());
+                document.getElementById('close-modal').addEventListener('click', () => this.closeModal());
+                document.getElementById('cancel-btn').addEventListener('click', () => this.closeModal());
+                
+                // Form submission
+                document.getElementById('news-form').addEventListener('submit', (e) => this.handleSubmit(e));
+                
+                // Settings
+                document.getElementById('clear-all-news').addEventListener('click', () => this.clearAllNews());
+                
+                // Mobile menu functionality
+                this.setupMobileMenu();
+                
+                // Character counter
+                document.getElementById('news-main-text').addEventListener('input', this.updateCharCount);
+                
+                // Image upload handling
+                document.getElementById('news-image').addEventListener('change', (e) => this.handleImageUpload(e));
+                document.getElementById('remove-image').addEventListener('click', () => this.removeImage());
+                document.getElementById('existing-images').addEventListener('change', (e) => this.handleExistingImageSelect(e));
+                
+                // Carousel modal controls
+                document.getElementById('add-carousel-image-btn')?.addEventListener('click', () => this.openCarouselModal());
+                document.getElementById('close-carousel-modal')?.addEventListener('click', () => this.closeCarouselModal());
+                document.getElementById('cancel-carousel-btn')?.addEventListener('click', () => this.closeCarouselModal());
+                
+                // Carousel form submission
+                document.getElementById('carousel-form')?.addEventListener('submit', (e) => this.handleCarouselSubmit(e));
+                
+                // Carousel image upload preview
+                document.getElementById('carousel-image-upload')?.addEventListener('change', (e) => this.handleCarouselImageUpload(e));
+            }
+
+            switchSection(section) {
+                // Update sidebar
+                document.querySelectorAll('.sidebar-link').forEach(link => {
+                    link.classList.remove('sidebar-active');
+                });
+                document.querySelector(`[data-section="${section}"]`).classList.add('sidebar-active');
+
+                // Update content
+                document.querySelectorAll('.section').forEach(sec => {
+                    sec.classList.add('hidden');
+                });
+                document.getElementById(`${section}-section`).classList.remove('hidden');
+                
+                // Load section-specific data
+                if (section === 'carousel') {
+                    this.loadCarouselImages();
+                }
+            }
+
+            openModal(newsItem = null) {
+                const modal = document.getElementById('news-modal');
+                const title = document.getElementById('modal-title');
+                
+                if (newsItem) {
+                    title.textContent = 'تعديل الخبر';
+                    this.fillForm(newsItem);
+                } else {
+                    title.textContent = 'إضافة خبر جديد';
+                    document.getElementById('news-form').reset();
+                    document.getElementById('news-id').value = '';
+                    this.setDefaultDate();
+                    this.removeImage();
+                    this.updateCharCount();
+                }
+                
+                modal.classList.remove('hidden');
+            }
+
+            closeModal() {
+                document.getElementById('news-modal').classList.add('hidden');
+                document.getElementById('news-form').reset();
+                this.removeImage();
+            }
+
+            fillForm(newsItem) {
+                document.getElementById('news-id').value = newsItem.id;
+                document.getElementById('news-title').value = newsItem.title;
+                document.getElementById('news-main-text').value = newsItem.mainText;
+                document.getElementById('news-date').value = newsItem.date;
+                
+                this.updateCharCount();
+                
+                if (newsItem.image) {
+                    if (newsItem.image.startsWith('assets/')) {
+                        document.getElementById('existing-images').value = newsItem.image;
+                    } else if (newsItem.image.startsWith('data:')) {
+                        // Show preview for uploaded image
+                        this.showImagePreview(newsItem.image);
+                    }
+                }
+            }
+
+            setDefaultDate() {
+                const today = new Date().toISOString().split('T')[0];
+                document.getElementById('news-date').value = today;
+            }
+
+            async handleSubmit(e) {
+                e.preventDefault();
+                
+                const existingImage = document.getElementById('existing-images').value;
+                const uploadedImage = this.currentUploadedImage;
+                
+                const newsItem = {
+                    title: document.getElementById('news-title').value.trim(),
+                    mainText: document.getElementById('news-main-text').value.trim(),
+                    date: document.getElementById('news-date').value,
+                    image: uploadedImage || existingImage || 'assets/mthani1.jpg'
+                };
+
+                // Additional validation for image size in base64
+                if (uploadedImage && uploadedImage.length > 2500000) { // ~1.9MB binary equivalent
+                    this.showErrorMessage('الصورة المرفوعة كبيرة بعد الضغط. يُفضّل صورة بدقة حتى 1600×1200 وجودة متوسطة (≤ ~2MB).');
+                    return;
+                }
+
+                // Validate required fields
+                if (!newsItem.title || !newsItem.mainText || !newsItem.date) {
+                    alert('يرجى ملء جميع الحقول المطلوبة');
+                    return;
+                }
+
+                try {
+                    const submitBtn = document.querySelector('#news-form button[type="submit"]');
+                    submitBtn.disabled = true;
+                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin ml-2"></i>جاري الحفظ...';
+
+                    const id = document.getElementById('news-id').value;
+                    let result;
+
+                    if (id) {
+                        // Edit existing
+                        result = await databaseService.updateNews(id, newsItem);
+                        this.showSuccessMessage('تم تحديث الخبر بنجاح');
+                    } else {
+                        // Add new
+                        result = await databaseService.addNews(newsItem);
+                        this.showSuccessMessage('تم إضافة الخبر بنجاح');
+                    }
+
+                    await this.loadNews();
+                    this.closeModal();
+                } catch (error) {
+                    console.error('Error saving news:', error);
+                    let errorMessage = 'حدث خطأ أثناء حفظ الخبر';
+                    
+                    // More specific error messages
+                    if (error.message.includes('payload too large') || error.message.includes('row size too large') || error.message.includes('value too long')) {
+                        errorMessage = 'حجم البيانات كبير جداً للحفظ. يرجى استخدام الصور الموجودة بدلاً من رفع صورة جديدة';
+                        // Auto-fallback to default image
+                        this.currentUploadedImage = null;
+                        document.getElementById('existing-images').value = 'assets/mthani1.jpg';
+                    } else if (error.message.includes('network') || error.message.includes('fetch')) {
+                        errorMessage = 'خطأ في الاتصال بقاعدة البيانات. يرجى المحاولة مرة أخرى';
+                    } else if (error.message.includes('duplicate') || error.message.includes('unique')) {
+                        errorMessage = 'يوجد خبر بنفس العنوان أو التاريخ. يرجى تغيير أحدهما';
+                    }
+                    
+                    this.showErrorMessage(errorMessage);
+                } finally {
+                    const submitBtn = document.querySelector('#news-form button[type="submit"]');
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = '<i class="fas fa-save ml-2"></i>حفظ';
+                }
+            }
+
+            async deleteNews(id) {
+                if (confirm('هل أنت متأكد من حذف هذا الخبر؟')) {
+                    try {
+                        await databaseService.deleteNews(id);
+                        await this.loadNews();
+                        this.showSuccessMessage('تم حذف الخبر بنجاح');
+                    } catch (error) {
+                        console.error('Error deleting news:', error);
+                        this.showErrorMessage('حدث خطأ أثناء حذف الخبر');
+                    }
+                }
+            }
+
+            async loadNews() {
+                const container = document.getElementById('news-list');
+                
+                try {
+                    // Show loading state
+                    container.innerHTML = `
+                        <div class="col-span-full text-center py-12">
+                            <i class="fas fa-spinner fa-spin text-gray-400 text-6xl mb-4"></i>
+                            <h3 class="text-xl text-gray-600">جاري تحميل الأخبار...</h3>
+                        </div>
+                    `;
+
+                    this.news = await databaseService.getAllNews();
+                    container.innerHTML = '';
+
+                    if (this.news.length === 0) {
+                        container.innerHTML = `
+                            <div class="col-span-full text-center py-12">
+                                <i class="fas fa-newspaper text-gray-400 text-6xl mb-4"></i>
+                                <h3 class="text-xl text-gray-600">لا توجد أخبار بعد</h3>
+                                <p class="text-gray-500">ابدأ بإضافة أول خبر</p>
+                            </div>
+                        `;
+                        return;
+                    }
+
+                    this.news.forEach(newsItem => {
+                        const card = document.createElement('div');
+                        card.className = 'news-item bg-white rounded-lg shadow-lg overflow-hidden';
+                        card.innerHTML = `
+                            <img src="${newsItem.image}" alt="${newsItem.title}" class="w-full h-48 object-cover">
+                            <div class="p-4">
+                                <h3 class="text-lg font-bold text-gray-800 mb-2 line-clamp-2">${newsItem.title}</h3>
+                                <p class="text-gray-600 text-sm mb-3 line-clamp-3">${newsItem.mainText.length > 100 ? newsItem.mainText.substring(0, 100) + '...' : newsItem.mainText}</p>
+                                <div class="text-xs text-gray-500 mb-4">${this.formatDate(newsItem.date)}</div>
+                                <div class="flex justify-between">
+                    <button onclick="dashboard.openModal(${JSON.stringify(newsItem).replace(/"/g, '&quot;')})" 
+                        class="text-[#6e1948] hover:text-[#efb740] transition-colors">
+                                        <i class="fas fa-edit ml-1"></i>
+                                        تعديل
+                                    </button>
+                                    <button onclick="dashboard.deleteNews('${newsItem.id}')" 
+                                            class="text-red-600 hover:text-red-700 transition-colors">
+                                        <i class="fas fa-trash ml-1"></i>
+                                        حذف
+                                    </button>
+                                </div>
+                            </div>
+                        `;
+                        container.appendChild(card);
+                    });
+                } catch (error) {
+                    console.error('Error loading news:', error);
+                    container.innerHTML = `
+                        <div class="col-span-full text-center py-12">
+                            <i class="fas fa-exclamation-triangle text-red-400 text-6xl mb-4"></i>
+                            <h3 class="text-xl text-red-600">خطأ في تحميل الأخبار</h3>
+                            <p class="text-gray-500 mb-4">تعذر الاتصال بقاعدة البيانات</p>
+                            <button onclick="dashboard.loadNews()" class="bg-[#6e1948] text-white px-6 py-3 rounded-lg hover:bg-[#6e1948]/90 transition-colors">
+                                <i class="fas fa-refresh ml-2"></i>
+                                إعادة المحاولة
+                            </button>
+                        </div>
+                    `;
+                }
+            }
+
+            formatDate(dateString) {
+                const date = new Date(dateString);
+                const months = ['يناير','فبراير','مارس','ابريل','مايو','يونيو','يوليو','اغسطس','سبتمبر','اكتوبر','نوفمبر','ديسمبر'];
+                return `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`;
+            }
+
+
+            
+            setupMobileMenu() {
+                const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+                const sidebar = document.getElementById('sidebar');
+                const overlay = document.getElementById('sidebar-overlay');
+                
+                // Toggle sidebar
+                mobileMenuBtn?.addEventListener('click', () => {
+                    sidebar.classList.toggle('open');
+                    overlay.classList.toggle('active');
+                });
+                
+                // Close sidebar when clicking overlay
+                overlay?.addEventListener('click', () => {
+                    sidebar.classList.remove('open');
+                    overlay.classList.remove('active');
+                });
+                
+                // Close sidebar when clicking sidebar links on mobile
+                document.querySelectorAll('.sidebar-link').forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (window.innerWidth <= 768) {
+                            sidebar.classList.remove('open');
+                            overlay.classList.remove('active');
+                        }
+                    });
+                });
+                
+                // Close sidebar on window resize if larger than mobile
+                window.addEventListener('resize', () => {
+                    if (window.innerWidth > 768) {
+                        sidebar.classList.remove('open');
+                        overlay.classList.remove('active');
+                    }
+                });
+            }
+
+            async clearAllNews() {
+                if (confirm('هل أنت متأكد من حذف جميع الأخبار؟ هذا الإجراء لا يمكن التراجع عنه.')) {
+                    try {
+                        await databaseService.deleteAllNews();
+                        await this.loadNews();
+                        this.showSuccessMessage('تم حذف جميع الأخبار');
+                    } catch (error) {
+                        console.error('Error deleting all news:', error);
+                        this.showErrorMessage('حدث خطأ أثناء حذف الأخبار');
+                    }
+                }
+            }
+
+            updateCharCount() {
+                const textarea = document.getElementById('news-main-text');
+                const charCount = document.getElementById('char-count');
+                if (textarea && charCount) {
+                    charCount.textContent = textarea.value.length;
+                }
+            }
+
+            handleImageUpload(e) {
+                const file = e.target.files[0];
+                if (!file) return;
+
+                // Validate file type
+                if (!file.type.startsWith('image/')) {
+                    alert('يرجى اختيار ملف صورة صحيح');
+                    return;
+                }
+
+                // Validate file size (soft cap ~ 2MB before compression)
+                if (file.size > 2 * 1024 * 1024) {
+                    alert('حجم الصورة كبير جداً. الحد الأقصى الموصى به 2 ميجابايت قبل الضغط');
+                    return;
+                }
+
+                // Compress and resize image before upload
+                this.compressImage(file, (compressedDataUrl) => {
+                    this.currentUploadedImage = compressedDataUrl;
+                    this.showImagePreview(compressedDataUrl);
+                    // Clear existing image selection
+                    document.getElementById('existing-images').value = '';
+                });
+            }
+
+            compressImage(file, callback) {
+                const canvas = document.createElement('canvas');
+                const ctx = canvas.getContext('2d');
+                const img = new Image();
+
+                img.onload = function() {
+                    // Larger maximum dimensions for better quality while keeping size reasonable
+                    const maxWidth = 1600;  // up to ~Full HD width
+                    const maxHeight = 1200;
+                    
+                    let { width, height } = img;
+                    
+                    // Calculate new dimensions (downscale if needed, preserve aspect ratio)
+                    if (width > height) {
+                        if (width > maxWidth) {
+                            height = (height * maxWidth) / width;
+                            width = maxWidth;
+                        }
+                    } else {
+                        if (height > maxHeight) {
+                            width = (width * maxHeight) / height;
+                            height = maxHeight;
+                        }
+                    }
+                    
+                    canvas.width = width;
+                    canvas.height = height;
+                    
+                    // Draw and compress (higher quality)
+                    ctx.drawImage(img, 0, 0, width, height);
+                    
+                    // Initial encode with decent quality
+                    let quality = 0.82;
+                    let compressedDataUrl = canvas.toDataURL('image/jpeg', quality);
+                    
+                    // If still large (> ~2.5MB in base64 chars), reduce quality a bit
+                    const MAX_BASE64_CHARS = 2500000; // ~1.9MB binary
+                    if (compressedDataUrl.length > MAX_BASE64_CHARS) {
+                        quality = 0.72;
+                        compressedDataUrl = canvas.toDataURL('image/jpeg', quality);
+                    }
+                    callback(compressedDataUrl);
+                };
+
+                img.src = URL.createObjectURL(file);
+            }
+
+            showImagePreview(imageSrc) {
+                const preview = document.getElementById('image-preview');
+                const previewImg = document.getElementById('preview-img');
+                
+                previewImg.src = imageSrc;
+                preview.classList.remove('hidden');
+            }
+
+            removeImage() {
+                this.currentUploadedImage = null;
+                document.getElementById('news-image').value = '';
+                document.getElementById('image-preview').classList.add('hidden');
+                document.getElementById('existing-images').value = '';
+            }
+
+            handleExistingImageSelect(e) {
+                if (e.target.value) {
+                    // Clear uploaded image when selecting existing
+                    this.currentUploadedImage = null;
+                    document.getElementById('news-image').value = '';
+                    document.getElementById('image-preview').classList.add('hidden');
+                }
+            }
+
+            showSuccessMessage(message) {
+                // Create temporary success message
+                const successDiv = document.createElement('div');
+                successDiv.className = 'fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50';
+                successDiv.innerHTML = `
+                    <div class="flex items-center">
+                        <i class="fas fa-check-circle ml-2"></i>
+                        ${message}
+                    </div>
+                `;
+                
+                document.body.appendChild(successDiv);
+                
+                // Remove after 3 seconds
+                setTimeout(() => {
+                    if (successDiv.parentNode) {
+                        successDiv.parentNode.removeChild(successDiv);
+                    }
+                }, 3000);
+            }
+
+            // ========== CAROUSEL MANAGEMENT METHODS ==========
+            async loadCarouselImages() {
+                const container = document.getElementById('carousel-images-list');
+                if (!container) return;
+                
+                try {
+                    container.innerHTML = `
+                        <div class="col-span-full text-center py-12">
+                            <i class="fas fa-spinner fa-spin text-gray-400 text-6xl mb-4"></i>
+                            <h3 class="text-xl text-gray-600">جاري تحميل الصور...</h3>
+                        </div>
+                    `;
+
+                    const images = await databaseService.getAllCarouselImages();
+                    container.innerHTML = '';
+
+                    if (images.length === 0) {
+                        container.innerHTML = `
+                            <div class="col-span-full text-center py-12">
+                                <i class="fas fa-images text-gray-400 text-6xl mb-4"></i>
+                                <h3 class="text-xl text-gray-600">لا توجد صور بعد</h3>
+                                <p class="text-gray-500">ابدأ بإضافة أول صورة للواجهة</p>
+                            </div>
+                        `;
+                        return;
+                    }
+
+                    images.forEach(image => {
+                        const card = document.createElement('div');
+                        card.className = 'bg-white rounded-lg shadow-lg overflow-hidden';
+                        card.innerHTML = `
+                            <img src="${image.image_url}" alt="${image.alt_text || 'صورة الواجهة'}" class="w-full h-48 object-cover">
+                            <div class="p-4">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-sm font-medium ${image.is_active ? 'text-green-600' : 'text-gray-500'}">
+                                        ${image.is_active ? 'نشط' : 'غير نشط'}
+                                    </span>
+                                    <span class="text-xs text-gray-500">ترتيب: ${image.sort_order}</span>
+                                </div>
+                                <p class="text-gray-600 text-sm mb-3">${image.alt_text || 'بدون وصف'}</p>
+                                <div class="flex justify-between">
+                    <button onclick="dashboard.openCarouselModal(${JSON.stringify(image).replace(/"/g, '&quot;')})" 
+                        class="text-[#6e1948] hover:text-[#efb740] transition-colors">
+                                        <i class="fas fa-edit ml-1"></i>
+                                        تعديل
+                                    </button>
+                                    <button onclick="dashboard.deleteCarouselImage('${image.id}')" 
+                                            class="text-red-600 hover:text-red-700 transition-colors">
+                                        <i class="fas fa-trash ml-1"></i>
+                                        حذف
+                                    </button>
+                                </div>
+                            </div>
+                        `;
+                        container.appendChild(card);
+                    });
+                } catch (error) {
+                    console.error('Error loading carousel images:', error);
+                    container.innerHTML = `
+                        <div class="col-span-full text-center py-12">
+                            <i class="fas fa-exclamation-triangle text-red-400 text-6xl mb-4"></i>
+                            <h3 class="text-xl text-red-600">خطأ في تحميل الصور</h3>
+                            <button onclick="dashboard.loadCarouselImages()" class="bg-[#6e1948] text-white px-6 py-3 rounded-lg hover:bg-[#6e1948]/90 transition-colors mt-4">
+                                إعادة المحاولة
+                            </button>
+                        </div>
+                    `;
+                }
+            }
+
+            openCarouselModal(imageData = null) {
+                const modal = document.getElementById('carousel-modal');
+                const title = document.getElementById('carousel-modal-title');
+                
+                if (imageData) {
+                    title.textContent = 'تعديل الصورة';
+                    this.fillCarouselForm(imageData);
+                } else {
+                    title.textContent = 'إضافة صورة جديدة';
+                    document.getElementById('carousel-form').reset();
+                    document.getElementById('carousel-image-id').value = '';
+                    this.hideCarouselImagePreview();
+                }
+                
+                modal.classList.remove('hidden');
+            }
+
+            closeCarouselModal() {
+                document.getElementById('carousel-modal').classList.add('hidden');
+                document.getElementById('carousel-form').reset();
+                this.hideCarouselImagePreview();
+            }
+
+            fillCarouselForm(imageData) {
+                document.getElementById('carousel-image-id').value = imageData.id;
+                document.getElementById('carousel-alt-text').value = imageData.alt_text || '';
+                document.getElementById('carousel-sort-order').value = imageData.sort_order || 0;
+                document.getElementById('carousel-is-active').checked = imageData.is_active;
+                
+                // Show current image
+                if (imageData.image_url) {
+                    const preview = document.getElementById('carousel-image-preview');
+                    const previewImg = document.getElementById('carousel-preview-img');
+                    previewImg.src = imageData.image_url;
+                    preview.classList.remove('hidden');
+                    
+                    // Make file input not required for editing
+                    document.getElementById('carousel-image-upload').required = false;
+                } else {
+                    this.hideCarouselImagePreview();
+                }
+            }
+
+            handleCarouselImageUpload(event) {
+                const file = event.target.files[0];
+                if (!file) return;
+
+                // Check file size (2MB limit)
+                if (file.size > 2 * 1024 * 1024) {
+                    alert('حجم الصورة كبير جداً. الحد الأقصى هو 2 ميجابايت.');
+                    event.target.value = '';
+                    return;
+                }
+
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    const preview = document.getElementById('carousel-image-preview');
+                    const previewImg = document.getElementById('carousel-preview-img');
+                    previewImg.src = e.target.result;
+                    preview.classList.remove('hidden');
+                };
+                reader.readAsDataURL(file);
+            }
+
+            hideCarouselImagePreview() {
+                document.getElementById('carousel-image-preview').classList.add('hidden');
+                document.getElementById('carousel-preview-img').src = '';
+                document.getElementById('carousel-image-upload').required = true;
+            }
+
+            async handleCarouselSubmit(event) {
+                event.preventDefault();
+                
+                try {
+                    const formData = new FormData(event.target);
+                    const imageId = document.getElementById('carousel-image-id').value;
+                    const imageFile = document.getElementById('carousel-image-upload').files[0];
+                    
+                    const carouselData = {
+                        alt_text: document.getElementById('carousel-alt-text').value,
+                        sort_order: parseInt(document.getElementById('carousel-sort-order').value) || 0,
+                        is_active: document.getElementById('carousel-is-active').checked
+                    };
+
+                    // Handle image upload if provided
+                    if (imageFile) {
+                        carouselData.image_url = await this.processCarouselImage(imageFile);
+                    }
+
+                    if (imageId) {
+                        // Update existing image
+                        await databaseService.updateCarouselImage(imageId, carouselData);
+                        this.showSuccessMessage('تم تحديث الصورة بنجاح');
+                    } else {
+                        // Add new image
+                        if (!carouselData.image_url) {
+                            throw new Error('يجب اختيار صورة');
+                        }
+                        await databaseService.addCarouselImage(carouselData);
+                        this.showSuccessMessage('تم إضافة الصورة بنجاح');
+                    }
+
+                    this.closeCarouselModal();
+                    await this.loadCarouselImages();
+                } catch (error) {
+                    console.error('Error saving carousel image:', error);
+                    this.showErrorMessage('فشل في حفظ الصورة: ' + error.message);
+                }
+            }
+
+            async processCarouselImage(file) {
+                return new Promise((resolve, reject) => {
+                    const reader = new FileReader();
+                    reader.onload = () => resolve(reader.result);
+                    reader.onerror = () => reject(new Error('فشل في قراءة الصورة'));
+                    reader.readAsDataURL(file);
+                });
+            }
+
+            async deleteCarouselImage(imageId) {
+                if (!confirm('هل أنت متأكد من حذف هذه الصورة؟')) return;
+
+                try {
+                    await databaseService.deleteCarouselImage(imageId);
+                    this.showSuccessMessage('تم حذف الصورة بنجاح');
+                    await this.loadCarouselImages();
+                } catch (error) {
+                    console.error('Error deleting carousel image:', error);
+                    this.showErrorMessage('فشل في حذف الصورة: ' + error.message);
+                }
+            }
+
+            showErrorMessage(message) {
+                // Create temporary error message
+                const errorDiv = document.createElement('div');
+                errorDiv.className = 'fixed top-4 right-4 bg-red-500 text-white px-6 py-3 rounded-lg shadow-lg z-50';
+                errorDiv.innerHTML = `
+                    <div class="flex items-center">
+                        <i class="fas fa-exclamation-circle ml-2"></i>
+                        ${message}
+                    </div>
+                `;
+                
+                document.body.appendChild(errorDiv);
+                
+                // Remove after 5 seconds
+                setTimeout(() => {
+                    if (errorDiv.parentNode) {
+                        errorDiv.parentNode.removeChild(errorDiv);
+                    }
+                }, 5000);
+            }
+        }
+
+        // Initialize dashboard
+        const dashboard = new NewsDashboard();
+    </script>
+</body>
+</html> 
