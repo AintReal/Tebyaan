@@ -1,0 +1,37 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/index.html", "destination": "/main", "permanent": true },
+    { "source": "/license-certificate.html", "destination": "/live-certificate", "permanent": true },
+    { "source": "/commercial-registry.html", "destination": "/commercial-registry", "permanent": true },
+    { "source": "/general-assembly.html", "destination": "/general-assembly", "permanent": true },
+    { "source": "/board-of-directors.html", "destination": "/founding-resolution", "permanent": true },
+    { "source": "/work-team.html", "destination": "/board-members", "permanent": true },
+    { "source": "/organizational-structure.html", "destination": "/org-structure", "permanent": true },
+    { "source": "/governmance-guides.html", "destination": "/governance-guides", "permanent": true },
+    { "source": "/regulations-politics.html", "destination": "/regulations-policies", "permanent": true },
+    { "source": "/annual-report-2025.html", "destination": "/annual-report-2025", "permanent": true },
+    { "source": "/news.html", "destination": "/news", "permanent": true },
+    { "source": "/volunteer-work.html", "destination": "/volunteer", "permanent": true },
+    { "source": "/privacy-policy.html", "destination": "/privacy-policy", "permanent": true },
+    { "source": "/hawkamah.html", "destination": "/hawkamah", "permanent": true },
+    { "source": "/:path*.html", "destination": "/:path*", "permanent": true }
+  ],
+  "rewrites": [
+    { "source": "/main", "destination": "/" },
+    { "source": "/live-certificate", "destination": "/license-certificate" },
+    { "source": "/commercial-registry", "destination": "/commercial-registry" },
+    { "source": "/general-assembly", "destination": "/general-assembly" },
+    { "source": "/founding-resolution", "destination": "/board-of-directors" },
+    { "source": "/board-members", "destination": "/work-team" },
+    { "source": "/org-structure", "destination": "/organizational-structure" },
+    { "source": "/governance-guides", "destination": "/governmance-guides" },
+    { "source": "/regulations-policies", "destination": "/regulations-politics" },
+    { "source": "/annual-report-2025", "destination": "/annual-report-2025" },
+    { "source": "/news", "destination": "/news" },
+    { "source": "/volunteer", "destination": "/volunteer-work" },
+    { "source": "/privacy-policy", "destination": "/privacy-policy" },
+    { "source": "/hawkamah", "destination": "/hawkamah" }
+  ]
+}
