@@ -25,6 +25,17 @@
     body, button, a { font-family: 'IBMPlexSansArabic', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
     body { background-color: #ffffff; color: #1f2937; }
   </style>
+  <style>
+    /* Make the mobile menu scrollable on phones (iOS-friendly) */
+    @media (max-width: 1024px) {
+      #mobile-menu {
+        max-height: calc(100vh - 72px);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
+      }
+    }
+  </style>
 </head>
 <body class="min-h-screen flex items-center justify-center p-6">
   <main class="w-full max-w-lg text-center">

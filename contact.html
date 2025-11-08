@@ -1346,6 +1346,17 @@
             <style>
                 .hover-green:hover { color: var(--color-primary); }
             </style>
+    <style>
+        /* Make the mobile menu scrollable on phones (iOS-friendly) */
+        @media (max-width: 1024px) {
+            #mobile-menu {
+                max-height: calc(100vh - 72px);
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
+                overscroll-behavior: contain;
+            }
+        }
+    </style>
 </head>
 <body class="bg-gray-50">
 
