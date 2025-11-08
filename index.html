@@ -768,6 +768,17 @@
                 font-size: 1.125rem;
             }
         }
+
+        /* Make the mobile menu scrollable on phones (iOS-friendly) */
+        @media (max-width: 1024px) {
+            #mobile-menu {
+                /* baseline: allow inner scrolling even if JS doesn't run */
+                max-height: calc(100vh - 72px);
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch; /* momentum scroll on iOS */
+                overscroll-behavior: contain;      /* prevent body scroll chaining */
+            }
+        }
         
         /* Contact section styling */
         .phone-contact-card {
@@ -2060,10 +2071,40 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Reset all mobile dropdowns to hidden when opening menu
             if (!mobileMenu.classList.contains('hidden')) {
+                // Position the mobile menu as a fixed, scrollable panel below the header bar
+                try {
+                    const headerBar = mobileMenu.previousElementSibling; // the top row inside header
+                    const topOffset = (headerBar && headerBar.getBoundingClientRect().height) || 72;
+                    Object.assign(mobileMenu.style, {
+                        position: 'fixed',
+                        top: topOffset + 'px',
+                        left: '0',
+                        right: '0',
+                        bottom: '0',
+                        overflowY: 'auto',
+                        WebkitOverflowScrolling: 'touch',
+                        zIndex: '60',
+                        background: 'rgba(255,255,255,0.9)',
+                        backdropFilter: 'blur(8px)'
+                    });
+                } catch (e) { /* noop */ }
+
                 const allMobileDropdowns = mobileMenu.querySelectorAll('.mobile-dropdown-content');
                 allMobileDropdowns.forEach(dropdown => {
                     dropdown.classList.add('hidden');
                 });
+            } else {
+                // Clean up inline styles when closing
+                mobileMenu.removeAttribute('style');
+            }
+        });
+
+        // Keep the fixed panel aligned on resize/orientation change
+        window.addEventListener('resize', function() {
+            if (!mobileMenu.classList.contains('hidden')) {
+                const headerBar = mobileMenu.previousElementSibling;
+                const topOffset = (headerBar && headerBar.getBoundingClientRect().height) || 72;
+                mobileMenu.style.top = topOffset + 'px';
             }
         });
     }
