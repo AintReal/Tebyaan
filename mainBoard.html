@@ -3,15 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>جمعية تبيان لخدمة ضيوف الرحمن - الرئيسية</title>
+    <title>اللائحة المحدثة المعتمدة | جمعية تبيان لخدمة ضيوف الرحمن</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="theme.css">
-    <!-- Supabase CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <!-- Database Configuration and Service -->
-    <script src="db-config.js"></script>
-    <script src="database-service.js"></script>
+   <link rel="stylesheet" href="theme.css">
         <style>
         :root {
             --color-primary: #0f5a4a;   /* logo deep green */
@@ -1544,323 +1539,58 @@
             </div>
         </div>
     </header>
-    
-    <main>
-        <section class="relative" id="home">
-            <!-- Hero Carousel -->
-            <div class="hero-carousel">
-                <!-- Manual slides (temporary, no DB) -->
-                <div class="hero-slide manual-slide active">
-                    <img class="carousel-image" src="assets/caro1.jpg" alt="صورة رئيسية 1">
-                </div>
-                <div class="hero-slide manual-slide">
-                    <img class="carousel-image" src="assets/caro2.jpg" alt="صورة رئيسية 2">
-                </div>
-                
-                <!-- Navigation Arrows -->
-                <button class="carousel-arrow carousel-arrow-prev" id="prevSlide" aria-label="الشريحة السابقة">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button class="carousel-arrow carousel-arrow-next" id="nextSlide" aria-label="الشريحة التالية">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-                
-                <!-- Dot Indicators - Will be loaded dynamically from database -->
-                <div class="carousel-dots">
-                </div>
-            </div>
-            
-            <div class="absolute inset-0 flex items-center justify-center hero-content pointer-events-none">
-                <div class="max-w-7xl mx-auto px-4 text-center text-white">
-                </div>
-            </div>
-        </section>
-        
-        <!-- Simple image + text section (added under carousel) -->
-        <section id="intro-section" class="py-12 bg-white">
-            <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row-reverse items-center gap-8 md:gap-12">
-                <!-- Image placeholder (600×400) with unique corner style -->
-                <div class="w-full md:w-1/2 flex justify-center md:justify-start">
-                    <div class="relative w-full bg-gray-100" style="max-width: 600px; border: 1px solid #e5e7eb; border-radius: 36px 10px 36px 10px; overflow: hidden;">
-                        <!-- Decorative blocked corner -->
-                        <div class="absolute top-0 right-0 w-0 h-0" style="border-left: 70px solid transparent; border-bottom: 70px solid var(--color-accent);"></div>
-                        <img src="assets/hero.jpg" alt="" class="block w-full h-auto">
-                    </div>
-                </div>
-                <!-- Text -->
-                <div class="w-full md:w-1/2 text-center max-w-2xl mx-auto md:mx-0">
-                    <h2 class="text-2xl md:text-3xl font-bold text-[#6e1948] mb-4">من نحن</h2>
-                    <p class="text-gray-700 leading-8">
-                   جمعية أهلية غير ربحية مرخّصة من المركز الوطني لتنمية القطاع غير الربحي برقم (5490)، مقرّها منطقة مكة المكرمة – مكة، تُعنى بخدمة ضيوف الرحمن وتقديم المبادرات التي تسهم في تحسين تجربتهم أثناء أدائهم المناسك، عبر برامج ميدانية وخدمات نوعية ترتبط بالضيافة والإرشاد والدعم.
+<style>
+    /* Ensure no horizontal overflow */
+    * {
+        box-sizing: border-box;
+    }
+</style>
 
-نعمل وفق معايير الحوكمة والشفافية، وبالشراكات مع الجهات ذات العلاقة، لنقدم خدمة ترتقي لمكانة الحاج والمعتمر في هذه البلاد المباركة.                </p>
-                </div>
+<main class="min-h-screen bg-white overflow-x-hidden">
+    <!-- Regulations (اللائحة) Section -->
+    <section class="py-16 bg-gray-50/60">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="section-header-container">
+                <h1 class="text-3xl md:text-4xl font-extrabold text-primary curved-underline gold">اللائحة المحدثة المعتمدة</h1>
+                <p class="section-subtitle text-gray-600 max-w-3xl mx-auto">اطلع على اللائحة الأساسية المحدثة والمعتمدة لجمعية تبيان لخدمة ضيوف الرحمن، والتي تنظم أعمال الجمعية وأهدافها وحوكمة إدارتها.</p>
             </div>
-        </section>
-        
-    <!-- Achievements Counter -->
-     <section class="py-16 lg:bg-black/30 text-white achievements-bg">
-            <div class="max-w-7xl mx-auto px-4">
-                <div class="fade-in">
-                    <div class="section-header-container">
-                        <h2 class="text-4xl font-bold text-white curved-underline gold">تبيان لخدمة ضيوف الرحمن بالأرقام</h2>
-                        <p class="text-xl text-white section-subtitle">نعمل معاً لبناء مجتمع أفضل</p>
+
+            <!-- Card -->
+            <div class="bg-white rounded-2xl shadow-lg border border-gray-200 p-6 md:p-8">
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+                            <i class="fa-solid fa-file-pdf text-2xl"></i>
+                        </div>
+                        <div class="text-right">
+                            <h2 class="text-xl md:text-2xl font-bold text-primary">اللائحة الأساسية المحدثة والمعتمدة</h2>
+                            <p class="text-gray-600 mt-1">آخر إصدار متاح للتنزيل والاطلاع.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap items-center gap-3">
+                        <a class="btn-accent px-5 py-3 rounded-xl font-semibold hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                           href="assets/اللائحة المحدثة المعتمدة لجمعية تبيان-للنشر على الموقع الإلكتروني.pdf" target="_blank" rel="noopener" aria-label="عرض اللائحة في نافذة جديدة">
+                            <i class="fa-solid fa-eye ml-2"></i> عرض اللائحة
+                        </a>
+                        <a class="bg-primary text-white px-5 py-3 rounded-xl font-semibold hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+                           href="assets/اللائحة المحدثة المعتمدة لجمعية تبيان-للنشر على الموقع الإلكتروني.pdf" download aria-label="تنزيل نسخة PDF من اللائحة">
+                            <i class="fa-solid fa-arrow-down ml-2"></i> تنزيل PDF
+                        </a>
                     </div>
                 </div>
-                
-                <div class="achievements-stack">
-                    <article class="achievement-tile fade-in">
-                        <header>
-                            <div class="achievement-icon-simple">
-                                <i class="fas fa-hands-helping"></i>
-                            </div>
-                            <div class="text-right">
-                                <span class="small-label">برامج التطوع</span>
-                                <h3>مشروع تطوعي</h3>
-                            </div>
-                        </header>
-                        <div class="achievement-number-simple">
-                            <div class="counter" data-target="10"><span class="suffix">+</span>0</div>
-                        </div>
-                        <p>مبادرات يقودها فريقنا التطوعي لتحريك المجتمع نحو الخير.</p>
-                        <footer>
-                            <strong>قصص بشرية</strong>
-                            <span>تشهد على أثر الخدمة المجتمعية</span>
-                        </footer>
-                    </article>
-                    <article class="achievement-tile fade-in">
-                        <header>
-                            <div class="achievement-icon-simple">
-                                <i class="fas fa-users"></i>
-                            </div>
-                            <div class="text-right">
-                                <span class="small-label">الإنسان أولاً</span>
-                                <h3>مستفيد</h3>
-                            </div>
-                        </header>
-                        <div class="achievement-number-simple">
-                            <div class="counter" data-target="5000"><span class="suffix">+</span>0</div>
-                        </div>
-                        <p>وجوه تعرفنا جيداً، وأُسر وجدت في تبيان لخدمة ضيوف الرحمن سنداً دائماً.</p>
-                        <footer>
-                            <strong>امتداد</strong>
-                            <span>لشراكات محلية وعطاء مستمر</span>
-                        </footer>
-                    </article>
-                    <article class="achievement-tile fade-in">
-                        <header>
-                            <div class="achievement-icon-simple">
-                                <i class="fas fa-calendar-alt"></i>
-                            </div>
-                            <div class="text-right">
-                                <span class="small-label">فعاليات مستمرة</span>
-                                <h3>برنامج مجتمعي</h3>
-                            </div>
-                        </header>
-                        <div class="achievement-number-simple">
-                            <div class="counter" data-target="25"><span class="suffix">+</span>0</div>
-                        </div>
-                        <p>لقاءات وورش ودورات تنسج جسوراً بين المعرفة والعمل.</p>
-                        <footer>
-                            <strong>تنظيم</strong>
-                            <span>بفريق نسائي وشبابي متطوع</span>
-                        </footer>
-                    </article>
-                    <article class="achievement-tile fade-in">
-                        <header>
-                            <div class="achievement-icon-simple">
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <div class="text-right">
-                                <span class="small-label">ثقة شركائنا</span>
-                                <h3>% معدل الرضا</h3>
-                            </div>
-                        </header>
-                        <div class="achievement-number-simple">
-                            <div class="counter" data-target="95">0<span class="suffix">%</span></div>
-                        </div>
-                        <p>معيار نقيس به رضا المستفيد والشريك قبل كل مشروع جديد.</p>
-                        <footer>
-                            <strong>التزام</strong>
-                            <span>بمعايير الحوكمة وجودة الخدمة</span>
-                        </footer>
-                    </article>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Program Highlights Timeline (new) -->
-        <section class="py-16 bg-surface" id="program-highlights" aria-labelledby="program-highlights-title">
-            <div class="max-w-7xl mx-auto px-4">
-                <div class="fade-in text-center md:text-right">
-                    <h2 id="program-highlights-title" class="text-4xl font-bold text-primary curved-underline gold">لمحات من برامجنا</h2>
-                    <p class="text-lg text-muted section-subtitle md:text-right md:mx-0 mx-auto max-w-3xl">
-                        نستعرض هنا بعض الإنجازات البارزة التي حققتها جمعية تبيان لخدمة ضيوف الرحمن في خدمة المجتمع.
+
+                <!-- Helpful notes -->
+                <div class="mt-6 text-sm text-gray-600 space-y-2">
+                    <p>الملف بصيغة PDF ويمكن فتحه على المتصفح مباشرة أو تنزيله للاحتفاظ به.</p>
+                    <p>في حال واجهتك مشكلة في العرض أو التنزيل، يُرجى مراسلتنا على
+                        <a href="mailto:tabyan1445@gmail.com" class="text-primary hover:text-accent font-medium">tabyan1445@gmail.com</a>.
                     </p>
                 </div>
-
-                <div class="timeline mt-12 space-y-14">
-                    <!-- Item 01 -->
-                    <div class="timeline-item grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-                        <div class="md:order-2">
-                            <div class="img-placeholder tl-media aspect-[4/3] shadow-sm">
-                                <span class="text-sm"><img src="assets/theone.jpg" alt=""></span>
-                            </div>
-                        </div>
-                        <div class="md:order-1">
-                            <h3 class="text-2xl font-bold text-primary mb-3">برنامج خدمة المعتكفين</h3>
-                            <p class="text-gray-700 leading-8">
-                               برنامج “خدمة المعتكفين” هو برنامج موسمي تُقدّمه الجمعية خلال العشر الأواخر من شهر رمضان المبارك، يهدف إلى دعم المعتكفين داخل الحرم والمساجد المخصصة للاعتكاف، وتوفير الاحتياجات الأساسية لهم من خدمات مساندة وتنظيمية تسهّل عليهم التفرّغ للعبادة والذكر وقيام الليل.
-                            </p>
-                        </div>
-                        <span class="timeline-marker" aria-hidden="true">01</span>
-                    </div>
-
-                    <!-- Item 02 -->
-                    <div class="timeline-item grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-                        <div class="md:order-1">
-                            <div class="img-placeholder tl-media aspect-[4/3] shadow-sm">
-                                <span class="text-sm"><img src="assets/thetwo.jpg" alt=""></span>
-                            </div>
-                        </div>
-                        <div class="md:order-2">
-                            <h3 class="text-2xl font-bold text-primary mb-3">برنامج تفطير الصائمين</h3>
-                            <p class="text-gray-700 leading-8">
-                             برنامج تفطير الصائمين هو أحد البرامج الموسمية التي تنفذها الجمعية لخدمة ضيوف الرحمن خلال شهر رمضان المبارك، ويهدف إلى توفير وجبات إفطار جاهزة للصائمين من الحجاج والمعتمرين والزوار، داخل نطاق مكة المكرمة والمواقع المرتبطة بالحرم، بما يعزز قيمة الضيافة والكرم، ويساهم في تيسير عبادتهم وأداء مناسكهم براحة وطمأنينة.                            </p>
-                        </div>
-                        <span class="timeline-marker" aria-hidden="true">02</span>
-                    </div>
-
-                    <!-- Item 03 -->
-                    <div class="timeline-item grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-                        <div class="md:order-2">
-                            <div class="img-placeholder tl-media aspect-[4/3] shadow-sm">
-                                <span class="text-sm"><img src="assets/thethree.jpg" alt=""></span>
-                            </div>
-                        </div>
-                        <div class="md:order-1">
-                            <h3 class="text-2xl font-bold text-primary mb-3">برنامج رحلات العمرة</h3>
-                            <p class="text-gray-700 leading-8">
-                             برنامج “رحلات العمرة” هو أحد برامج الجمعية لخدمة ضيوف الرحمن، حيث يتم تنظيم رحلات عمرة للمستفيدين بطريقة منظّمة وميسّرة، تبدأ من مرحلة التنسيق والتسجيل، مرورًا بتوفير وسائل النقل المناسبة، ووصولًا إلى تقديم الإرشاد والتوجيه أثناء أداء المناسك.
-                        </div>
-                        <span class="timeline-marker" aria-hidden="true">03</span>
-                    </div>
-                </div>
             </div>
-        </section>
-                <!-- قيمنا (Values) - New Small Section -->
-        <section id="values" class="py-16 bg-gray-50/60 border-t">
-            <div class="max-w-7xl mx-auto px-4">
-                <div class="fade-in text-center md:text-right">
-                    <h2 class="text-3xl md:text-4xl font-bold text-primary curved-underline gold">قيمنا</h2>
-                    <p class="text-lg text-muted section-subtitle md:text-right md:mx-0 mx-auto max-w-3xl">قيم ثابتة تقود عملنا وتنعكس في جميع برامجنا وشراكاتنا.</p>
-                </div>
-                <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-                    <div class="bg-surface rounded-2xl p-6 shadow-sm ring-1 ring-black/5 hover:shadow-md transition-all">
-                        <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary grid place-items-center mb-4">
-                            <i class="fas fa-shield-alt" aria-hidden="true"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-primary mb-2">الأمانة</h3>
-                        <p class="text-muted text-sm leading-7">نلتزم بأعلى معايير الأمانة في تخطيط البرامج وتنفيذها وخدمة المستفيدين.</p>
-                    </div>
-                    <div class="bg-surface rounded-2xl p-6 shadow-sm ring-1 ring-black/5 hover:shadow-md transition-all">
-                        <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary grid place-items-center mb-4">
-                            <i class="fas fa-balance-scale" aria-hidden="true"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-primary mb-2">الشفافية</h3>
-                        <p class="text-muted text-sm leading-7">وضوح في التواصل والإفصاح عن النتائج بما يرسخ الثقة مع الشركاء والمجتمع.</p>
-                    </div>
-                    <div class="bg-surface rounded-2xl p-6 shadow-sm ring-1 ring-black/5 hover:shadow-md transition-all">
-                        <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary grid place-items-center mb-4">
-                            <i class="fas fa-star" aria-hidden="true"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-primary mb-2">التميّز</h3>
-                        <p class="text-muted text-sm leading-7">سعي مستمر لتقديم برامج نوعية ذات أثر ملموس واستدامة عالية.</p>
-                    </div>
-                    <div class="bg-surface rounded-2xl p-6 shadow-sm ring-1 ring-black/5 hover:shadow-md transition-all">
-                        <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary grid place-items-center mb-4">
-                            <i class="fas fa-handshake" aria-hidden="true"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-primary mb-2">الشراكة</h3>
-                        <p class="text-muted text-sm leading-7">نؤمن بقوة الشراكات والتكامل مع الجهات لتحقيق أثر أوسع وأعمق.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-                      <!-- Recent News -->
-    <section id="news" class="py-16 bg-primary news-bg">
-            <div class="max-w-7xl mx-auto px-4">
-                <div class="fade-in">
-                    <div class="section-header-container">
-                        <h2 class="text-4xl font-bold text-white curved-underline gold">أخبار تبيان لخدمة ضيوف الرحمن</h2>
-                        <p class="text-xl text-white section-subtitle">ابق على اطلاع بآخر أخبار وأنشطة تبيان لخدمة ضيوف الرحمن</p>
-                    </div>
-                </div>
-                
-                <div class="overflow-hidden">
-                  <div id="homepage-news-ticker" class="flex items-center justify-center space-x-8 space-x-reverse news-scroll">
-                  </div>
-                </div>
-                
-                <div class="text-center mt-12">
-                    <a href="news.html" class="btn-accent px-8 py-3 rounded-lg font-bold hover:bg-primary transition-colors inline-flex items-center">
-                        عرض جميع الأخبار
-                        <i class="fas fa-arrow-left mr-2"></i>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        
-        <!-- Partners Carousel -->
-        <section class="py-16 bg-white border-t">
-            <div class="max-w-7xl mx-auto px-4">
-                <div class="fade-in">
-                    <div class="section-header-container">
-                        <h2 class="text-4xl font-bold text-accent curved-underline gold">شركاء النجاح</h2>
-                        <p class="text-xl text-gray-600 section-subtitle">نعمل مع أفضل الشركات والمؤسسات لخدمة مجتمعنا</p>
-                    </div>
-                </div>
-                
-                <div class="overflow-hidden">
-                    <div class="flex items-center justify-center space-x-8 space-x-reverse partner-scroll">
-                        <div class="flex-shrink-0 w-32 h-24 flex items-center justify-center hover:scale-110 transition-transform">
-                            <img src="assets/partner1.jpeg" alt="شريك 1" class="max-w-full max-h-full object-contain">
-                        </div><div class="flex-shrink-0 w-32 h-24 flex items-center justify-center hover:scale-110 transition-transform">
-                            <img src="assets/partnet2.jpeg" alt="شريك 2" class="max-w-full max-h-full object-contain">
-                        </div><div class="flex-shrink-0 w-32 h-24 flex items-center justify-center hover:scale-110 transition-transform">
-                            <img src="assets/partner3.jpeg" alt="شريك 3" class="max-w-full max-h-full object-contain">
-                        </div><div class="flex-shrink-0 w-32 h-24 flex items-center justify-center hover:scale-110 transition-transform">
-                            <img src="assets/partner4.jpeg" alt="شريك 4" class="max-w-full max-h-full object-contain">
-                        </div><div class="flex-shrink-0 w-32 h-24 flex items-center justify-center hover:scale-110 transition-transform">
-                            <img src="assets/partner5.jpeg" alt="شريك 5" class="max-w-full max-h-full object-contain">
-                        </div><div class="flex-shrink-0 w-32 h-24 flex items-center justify-center hover:scale-110 transition-transform">
-                            <img src="assets/partner6.jpeg" alt="شريك 6" class="max-w-full max-h-full object-contain">
-                        </div><div class="flex-shrink-0 w-32 h-24 flex items-center justify-center hover:scale-110 transition-transform">
-                            <img src="assets/partner1.jpeg" alt="شريك 9" class="max-w-full max-h-full object-contain">
-                        </div><div class="flex-shrink-0 w-32 h-24 flex items-center justify-center hover:scale-110 transition-transform">
-                            <img src="assets/partner3.jpeg" alt="شريك 11" class="max-w-full max-h-full object-contain">
-                        </div><div class="flex-shrink-0 w-32 h-24 flex items-center justify-center hover:scale-110 transition-transform">
-                            <img src="assets/partner4.jpeg" alt="شريك 12" class="max-w-full max-h-full object-contain">
-                        </div>
-                        <div class="flex-shrink-0 w-32 h-24 flex items-center justify-center hover:scale-110 transition-transform">
-                            <img src="assets/partner1.jpeg" alt="شريك 13" class="max-w-full max-h-full object-contain">
-                        </div>
-                        <div class="flex-shrink-0 w-32 h-24 flex items-center justify-center hover:scale-110 transition-transform">
-                            <img src="assets/partner5.jpeg" alt="شريك 14" class="max-w-full max-h-full object-contain">
-                        </div>
-                        <div class="flex-shrink-0 w-32 h-24 flex items-center justify-center hover:scale-110 transition-transform">
-                            <img src="assets/partner6.jpeg" alt="شريك 15" class="max-w-full max-h-full object-contain">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-  
-
-
+        </div>
+    </section>
+</main>
 
     <!-- Footer -->
     <footer class="bg-primary text-white">
@@ -1958,1175 +1688,567 @@
         </div>
     </div>
 
+
     <script>
-
-
-// ========== SECURITY UTILITIES ==========
-function sanitizeHTML(str) {
-    if (!str) return '';
-    return str.replace(/[&<>"']/g, function(match) {
-        return {
-            '&': '&amp;',
-            '<': '&lt;',
-            '>': '&gt;',
-            '"': '&quot;',
-            "'": '&#39;'
-        }[match];
-    });
-}
-
-
-    function checkSiteClosure() {
-        const isClosed = localStorage.getItem('mthani-site-closed') === 'true';
-        if (isClosed && !window.location.pathname.includes('dashboard.html')) {
-
-            console.warn('Site is in maintenance mode');
-            return false;
-        }
-        return true;
-    }
-
-
-window.onerror = function(message, source, lineno, colno, error) {
-    console.error('JavaScript Error:', { message, source, lineno, colno, error });
-
-    if (message.includes('Script error') || message.includes('Network Error') || message.includes('Cannot read property')) {
-        setTimeout(() => {
-            window.location.href = 'error.html?code=js&msg=' + encodeURIComponent(message);
-        }, 3000); 
-    }
-    return false;
-};
-
-
-window.addEventListener('unhandledrejection', function(event) {
-    console.error('Unhandled Promise Rejection:', event.reason);
-
-    if (event.reason && (event.reason.toString().includes('Network') || event.reason.toString().includes('Failed to fetch'))) {
-        setTimeout(() => {
-            window.location.href = 'error.html?code=promise&msg=' + encodeURIComponent(event.reason);
-        }, 3000);
-    }
-});
-
-
-document.addEventListener('DOMContentLoaded', function() {
-
-    if (!checkSiteClosure()) return;
-    
-    // ========== DROPDOWN MENU FUNCTIONALITY ==========
-    const dropdowns = document.querySelectorAll('.dropdown');
-    dropdowns.forEach(dropdown => {
-        const button = dropdown.querySelector('button');
-        const content = dropdown.querySelector('.dropdown-content');
-        
-        // Show dropdown on mouse enter
-        dropdown.addEventListener('mouseenter', function() {
-            // Close other dropdowns
-            dropdowns.forEach(otherDropdown => {
-                if (otherDropdown !== dropdown) {
-                    otherDropdown.querySelector('.dropdown-content').style.display = 'none';
-                    otherDropdown.querySelector('button').setAttribute('aria-expanded', 'false');
-                }
+        // Basic dropdown functionality
+        const dropdowns = document.querySelectorAll('.dropdown');
+        dropdowns.forEach(dropdown => {
+            dropdown.addEventListener('mouseenter', function() {
+                const content = dropdown.querySelector('.dropdown-content');
+                content.style.display = 'block';
             });
             
-            // Show current dropdown
-            content.style.display = 'block';
-            button.setAttribute('aria-expanded', 'true');
+            dropdown.addEventListener('mouseleave', function() {
+                const content = dropdown.querySelector('.dropdown-content');
+                content.style.display = 'none';
+            });
         });
-        
-        // Hide dropdown on mouse leave
-        dropdown.addEventListener('mouseleave', function() {
-            content.style.display = 'none';
-            button.setAttribute('aria-expanded', 'false');
-        });
-        
-        // Handle keyboard navigation for accessibility
-        button.addEventListener('click', function(e) {
-            e.preventDefault();
-        });
-    });
+    </script>
 
-    // ========== MOBILE MENU FUNCTIONALITY ==========
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    
-    if (mobileMenuBtn && mobileMenu) {
-        mobileMenuBtn.addEventListener('click', function() {
-            mobileMenu.classList.toggle('hidden');
-            const icon = mobileMenuBtn.querySelector('i');
-            icon.classList.toggle('fa-bars');
-            icon.classList.toggle('fa-times');
+
+<script>
+      
+    // DOM Content Loaded Event
+    document.addEventListener('DOMContentLoaded', function() {
+        
+        // ========== DROPDOWN MENU FUNCTIONALITY ==========
+        const dropdowns = document.querySelectorAll('.dropdown');
+        dropdowns.forEach(dropdown => {
+            const button = dropdown.querySelector('button');
+            const content = dropdown.querySelector('.dropdown-content');
             
-            // Reset all mobile dropdowns to hidden when opening menu
-            if (!mobileMenu.classList.contains('hidden')) {
-                const allMobileDropdowns = mobileMenu.querySelectorAll('.mobile-dropdown-content');
-                allMobileDropdowns.forEach(dropdown => {
-                    dropdown.classList.add('hidden');
+            // Show dropdown on mouse enter
+            dropdown.addEventListener('mouseenter', function() {
+                // Close other dropdowns
+                dropdowns.forEach(otherDropdown => {
+                    if (otherDropdown !== dropdown) {
+                        otherDropdown.querySelector('.dropdown-content').style.display = 'none';
+                        otherDropdown.querySelector('button').setAttribute('aria-expanded', 'false');
+                    }
                 });
-            }
-        });
-    }
-
-
-
-    
-
-    // ========== NEWS TICKER FUNCTIONALITY ==========
-    const newsTicker = document.getElementById('news-ticker');
-    if (newsTicker) {
-        let tickerPosition = 0;
-        const tickerSpeed = 1;
-
-        function animateTicker() {
-            tickerPosition -= tickerSpeed;
-            if (tickerPosition <= -newsTicker.offsetWidth) {
-                tickerPosition = newsTicker.parentElement.offsetWidth;
-            }
-            newsTicker.style.transform = `translateX(${tickerPosition}px)`;
-            requestAnimationFrame(animateTicker);
-        }
-
-        animateTicker();
-    }
-
-    // ========== MEDIA TABS FUNCTIONALITY ==========
-    const mediaTabs = document.querySelectorAll('.media-tab');
-    const mediaContents = document.querySelectorAll('.media-content');
-
-    mediaTabs.forEach(tab => {
-        tab.addEventListener('click', function() {
-            const targetTab = this.dataset.tab;
+                
+                // Show current dropdown
+                content.style.display = 'block';
+                button.setAttribute('aria-expanded', 'true');
+            });
             
-            // Update active tab
-            mediaTabs.forEach(t => t.classList.remove('active', 'bg-white', 'text-[#432d17]'));
-            this.classList.add('active', 'bg-white', 'text-[#432d17]');
+            // Hide dropdown on mouse leave
+            dropdown.addEventListener('mouseleave', function() {
+                content.style.display = 'none';
+                button.setAttribute('aria-expanded', 'false');
+            });
             
-            // Show/hide content
-            mediaContents.forEach(content => {
-                if (content.id === targetTab) {
-                    content.classList.remove('hidden');
-                } else {
-                    content.classList.add('hidden');
-                }
+            // Handle keyboard navigation for accessibility
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
             });
         });
-    });
-
-    // ========== LIGHTBOX FUNCTIONALITY ==========
-    const lightboxTriggers = document.querySelectorAll('.lightbox-trigger');
-    let lightboxModal = null;
-
-    function createLightbox(src, title) {
-        // Remove existing lightbox if any lol lol
-        if (lightboxModal) {
-            lightboxModal.remove();
-        }
-
-        // Create lightbox modal
-        lightboxModal = document.createElement('div');
-        lightboxModal.className = 'fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4';
-        lightboxModal.innerHTML = `
-            <div class="relative max-w-4xl max-h-full">
-                <img src="${src}" alt="${title}" class="max-w-full max-h-full object-contain">
-                <button class="absolute top-4 right-4 text-white text-2xl hover:text-gray-300 lightbox-close">
-                    <i class="fas fa-times"></i>
-                </button>
-                <div class="absolute bottom-4 left-4 text-white bg-black bg-opacity-50 px-4 py-2 rounded">
-                    <h3 class="font-semibold">${title}</h3>
-                </div>
-            </div>
-        `;
-
-        document.body.appendChild(lightboxModal);
-
-        // Close lightbox functionality
-        const closeBtn = lightboxModal.querySelector('.lightbox-close');
-        closeBtn.addEventListener('click', closeLightbox);
+    
+        // ========== MOBILE MENU FUNCTIONALITY ==========
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
         
-        lightboxModal.addEventListener('click', function(e) {
-            if (e.target === lightboxModal) {
-                closeLightbox();
-            }
-        });
-
-
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeLightbox();
-            }
-        });
-    }
-
-    function closeLightbox() {
-        if (lightboxModal) {
-            lightboxModal.remove();
-            lightboxModal = null;
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.toggle('fa-bars');
+                icon.classList.toggle('fa-times');
+                
+                // Reset all mobile dropdowns to hidden when opening menu
+                if (!mobileMenu.classList.contains('hidden')) {
+                    const allMobileDropdowns = mobileMenu.querySelectorAll('.mobile-dropdown-content');
+                    allMobileDropdowns.forEach(dropdown => {
+                        dropdown.classList.add('hidden');
+                    });
+                }
+            });
         }
-    }
-
-    lightboxTriggers.forEach(trigger => {
-        trigger.addEventListener('click', function() {
-            const src = this.dataset.src;
-            const title = this.querySelector('h3').textContent;
-            createLightbox(src, title);
+    
+        // ========== HERO CAROUSEL FUNCTIONALITY ==========
+        const heroSlides = document.querySelectorAll('.hero-slide');
+        let currentSlide = 0;
+    
+        function showSlide(index) {
+            heroSlides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                }
+            });
+        }
+    
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % heroSlides.length;
+            showSlide(currentSlide);
+        }
+    
+        // Auto-advance carousel every 3 seconds
+        if (heroSlides.length > 0) {
+            setInterval(nextSlide, 3000);
+        }
+    
+        // ========== NEWS TICKER FUNCTIONALITY ==========
+        const newsTicker = document.getElementById('news-ticker');
+        if (newsTicker) {
+            let tickerPosition = 0;
+            const tickerSpeed = 1;
+    
+            function animateTicker() {
+                tickerPosition -= tickerSpeed;
+                if (tickerPosition <= -newsTicker.offsetWidth) {
+                    tickerPosition = newsTicker.parentElement.offsetWidth;
+                }
+                newsTicker.style.transform = `translateX(${tickerPosition}px)`;
+                requestAnimationFrame(animateTicker);
+            }
+    
+            animateTicker();
+        }
+    
+        // ========== MEDIA TABS FUNCTIONALITY ==========
+        const mediaTabs = document.querySelectorAll('.media-tab');
+        const mediaContents = document.querySelectorAll('.media-content');
+    
+        mediaTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                const targetTab = this.dataset.tab;
+                
+                // Update active tab
+                mediaTabs.forEach(t => t.classList.remove('active', 'bg-white', 'text-[#432d17]'));
+                this.classList.add('active', 'bg-white', 'text-[#432d17]');
+                
+                // Show/hide content
+                mediaContents.forEach(content => {
+                    if (content.id === targetTab) {
+                        content.classList.remove('hidden');
+                    } else {
+                        content.classList.add('hidden');
+                    }
+                });
+            });
         });
-    });
-
-    //  COUNTER ANIMATION 
-    const counters = document.querySelectorAll('.counter');
-    const counterObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const counter = entry.target;
-                const target = parseInt(counter.dataset.target);
-                let duration = Math.min(4000, Math.max(1200, target * 10)); 
-                if (target > 10000) duration = Math.min(6000, target * 0.2); 
-                const step = target / (duration / 16); // 60fps
-                let current = 0;
-
-                counter.style.transition = 'transform 0.3s cubic-bezier(.68,-0.55,.27,1.55), color 0.3s';
-                counter.style.transform = 'scale(1.2)';
-                counter.style.color = 'white';
-
-                setTimeout(() => {
-                    counter.style.transform = 'scale(1)';
-                }, 300);
-
-                const updateCounter = () => {
-                    if (current < target) {
-                        current += step;
-                        const existingIcon = counter.querySelector('span');
-                        const iconSymbol = target === 95 ? '%' : '+';
-                        if (target === 95) {
-                            counter.innerHTML = Math.floor(current).toLocaleString('en-US') + (existingIcon ? existingIcon.outerHTML : `<span class="text-[#efb740] text-2xl mr-1">${iconSymbol}</span>`);
+    
+        // ========== LIGHTBOX FUNCTIONALITY ==========
+        const lightboxTriggers = document.querySelectorAll('.lightbox-trigger');
+        let lightboxModal = null;
+    
+        function createLightbox(src, title) {
+            // Remove existing lightbox if any
+            if (lightboxModal) {
+                lightboxModal.remove();
+            }
+    
+            // Create lightbox modal
+            lightboxModal = document.createElement('div');
+            lightboxModal.className = 'fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4';
+            lightboxModal.innerHTML = `
+                <div class="relative max-w-4xl max-h-full">
+                    <img src="${src}" alt="${title}" class="max-w-full max-h-full object-contain">
+                    <button class="absolute top-4 right-4 text-white text-2xl hover:text-gray-300 lightbox-close">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <div class="absolute bottom-4 left-4 text-white bg-black bg-opacity-50 px-4 py-2 rounded">
+                        <h3 class="font-semibold">${title}</h3>
+                    </div>
+                </div>
+            `;
+    
+            document.body.appendChild(lightboxModal);
+    
+            // Close lightbox functionality
+            const closeBtn = lightboxModal.querySelector('.lightbox-close');
+            closeBtn.addEventListener('click', closeLightbox);
+            
+            lightboxModal.addEventListener('click', function(e) {
+                if (e.target === lightboxModal) {
+                    closeLightbox();
+                }
+            });
+    
+            // ESC key to close
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeLightbox();
+                }
+            });
+        }
+    
+        function closeLightbox() {
+            if (lightboxModal) {
+                lightboxModal.remove();
+                lightboxModal = null;
+            }
+        }
+    
+        lightboxTriggers.forEach(trigger => {
+            trigger.addEventListener('click', function() {
+                const src = this.dataset.src;
+                const title = this.querySelector('h3').textContent;
+                createLightbox(src, title);
+            });
+        });
+    
+        // ========== COUNTER ANIMATION ==========
+        const counters = document.querySelectorAll('.counter');
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counter = entry.target;
+                    const target = parseInt(counter.dataset.target);
+                    // Make duration proportional to the target value (e.g., 10ms per unit, capped for very large numbers)
+                    let duration = Math.min(4000, Math.max(1200, target * 10)); // 10ms per unit, min 1.2s, max 4s
+                    if (target > 10000) duration = Math.min(6000, target * 0.2); // For very large numbers, slow down a bit more
+                    const step = target / (duration / 16); // 60fps
+                    let current = 0;
+    
+                    counter.style.transition = 'transform 0.3s cubic-bezier(.68,-0.55,.27,1.55), color 0.3s';
+                    counter.style.transform = 'scale(1.2)';
+                    counter.style.color = 'white';
+    
+                    setTimeout(() => {
+                        counter.style.transform = 'scale(1)';
+                    }, 300);
+    
+                    const updateCounter = () => {
+                        if (current < target) {
+                            current += step;
+                            counter.textContent = Math.floor(current).toLocaleString('en-US');
+                            // Add a bounce effect every 20% progress
+                            if (target > 0 && Math.abs(current % (target / 5)) < step) {
+                                counter.style.transform = 'scale(1.15)';
+                                setTimeout(() => {
+                                    counter.style.transform = 'scale(1)';
+                                }, 120);
+                            }
+                            requestAnimationFrame(updateCounter);
                         } else {
-                            counter.innerHTML = (existingIcon ? existingIcon.outerHTML : `<span class="text-[#efb740] text-2xl ml-1">${iconSymbol}</span>`) + Math.floor(current).toLocaleString('en-US');
-                        }
-                        if (target > 0 && Math.abs(current % (target / 5)) < step) {
-                            counter.style.transform = 'scale(1.15)';
+                            counter.textContent = target.toLocaleString('en-US');
+                            counter.style.transform = 'scale(1.1)';
                             setTimeout(() => {
                                 counter.style.transform = 'scale(1)';
-                            }, 120);
+                            }, 200);
                         }
-                        requestAnimationFrame(updateCounter);
-                    } else {
-                        const existingIcon = counter.querySelector('span');
-                        const iconSymbol = target === 95 ? '%' : '+';
-                        if (target === 95) {
-                            counter.innerHTML = target.toLocaleString('en-US') + (existingIcon ? existingIcon.outerHTML : `<span class="text-[#efb740] text-2xl mr-1">${iconSymbol}</span>`);
-                        } else {
-                            counter.innerHTML = (existingIcon ? existingIcon.outerHTML : `<span class="text-[#efb740] text-2xl ml-1">${iconSymbol}</span>`) + target.toLocaleString('en-US');
-                        }
-                        counter.style.transform = 'scale(1.1)';
-                        setTimeout(() => {
-                            counter.style.transform = 'scale(1)';
-                        }, 200);
-                    }
-                };
-
-                updateCounter();
-                counterObserver.unobserve(counter);
-            }
-        });
-    });
-
-    counters.forEach(counter => {
-        counterObserver.observe(counter);
-    });
-
-    // PARTNERS CAROUSEL
-    const partnerScroll = document.querySelector('.partner-scroll');
-    if (partnerScroll) {
-        let scrollPosition = 0;
-        const scrollSpeed = 1;
-
-        function animatePartners() {
-            scrollPosition -= scrollSpeed;
-            if (scrollPosition <= -partnerScroll.scrollWidth / 2) {
-                scrollPosition = 0;
-            }
-            partnerScroll.style.transform = `translateX(${scrollPosition}px)`;
-            requestAnimationFrame(animatePartners);
-        }
-
-        animatePartners();
-    }
-    // FADE IN ANIMATION
-    const fadeElements = document.querySelectorAll('.fade-in');
-    const fadeObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Element is in view - animate in
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            } else {
-                // Element is out of view - reset for next animation
-                entry.target.style.opacity = '0';
-                entry.target.style.transform = 'translateY(30px)';
-            }
-        });
-    }, {
-        threshold: 0.1
-    });
-
-    fadeElements.forEach(element => {
-        element.style.opacity = '0';
-        element.style.transform = 'translateY(30px)';
-        element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        fadeObserver.observe(element);
-    });
-
-    // SCROLL TO TOP FUNCTIONALITY (reuse existing button if present)
-    const scrollToTopBtn = document.getElementById('scroll-to-top') || (function(){
-        const btn = document.createElement('button');
-        btn.id = 'scroll-to-top';
-        btn.className = 'fixed bottom-6 left-6 bg-primary text-white w-12 h-12 rounded-full shadow-lg hover:bg-primary/90 transition-all duration-300 z-50';
-        btn.innerHTML = '<i class="fas fa-chevron-up"></i>';
-        document.body.appendChild(btn);
-        return btn;
-    })();
-    scrollToTopBtn.style.display = 'none';
-
-    scrollToTopBtn.addEventListener('click', function() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-
-    window.addEventListener('scroll', function() {
-        if (window.pageYOffset > 300) {
-            scrollToTopBtn.style.display = 'flex';
-            scrollToTopBtn.style.alignItems = 'center';
-            scrollToTopBtn.style.justifyContent = 'center';
-        } else {
-            scrollToTopBtn.style.display = 'none';
-        }
-    });
-
-    // ========== SMOOTH SCROLLING FOR ANCHOR LINKS ==========
-    const anchorLinks = document.querySelectorAll('a[href^="#"]');
-    anchorLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
-
-    // ========== SERVICE CARDS INTERACTIONS ==========
-    const serviceCards = document.querySelectorAll('.hero-content .grid > div, .grid.grid-cols-2.md\\:grid-cols-4.lg\\:grid-cols-6 > div');
-    serviceCards.forEach(card => {
-        card.addEventListener('click', function() {
-            const serviceName = this.querySelector('h3').textContent;
-            alert(`سيتم توجيهكم إلى صفحة ${serviceName} قريباً`);
-        });
-    });
-
-    // ========== ACCESSIBILITY ENHANCEMENTS ==========
+                    };
     
-    // Keyboard navigation for dropdowns
-    dropdowns.forEach(dropdown => {
-        const button = dropdown.querySelector('button');
-        const links = dropdown.querySelectorAll('a');
-        
-        button.addEventListener('keydown', function(e) {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                this.click();
-            } else if (e.key === 'ArrowDown') {
-                e.preventDefault();
-                const content = dropdown.querySelector('.dropdown-content');
-                if (content.style.display === 'block') {
-                    const firstLink = content.querySelector('a');
-                    if (firstLink) firstLink.focus();
+                    updateCounter();
+                    counterObserver.unobserve(counter);
                 }
+            });
+        });
+    
+        counters.forEach(counter => {
+            counterObserver.observe(counter);
+        });
+    
+        // ========== PARTNERS CAROUSEL ==========
+        const partnerScroll = document.querySelector('.partner-scroll');
+        if (partnerScroll) {
+            let scrollPosition = 0;
+            const scrollSpeed = 1;
+    
+            function animatePartners() {
+                scrollPosition -= scrollSpeed;
+                if (scrollPosition <= -partnerScroll.scrollWidth / 2) {
+                    scrollPosition = 0;
+                }
+                partnerScroll.style.transform = `translateX(${scrollPosition}px)`;
+                requestAnimationFrame(animatePartners);
+            }
+    
+            animatePartners();
+        }
+    
+        // ========== FADE IN ANIMATION ==========
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Element is in view - animate in
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                } else {
+                    // Element is out of view - reset for next animation
+                    entry.target.style.opacity = '0';
+                    entry.target.style.transform = 'translateY(30px)';
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+    
+        fadeElements.forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            fadeObserver.observe(element);
+        });
+    
+        // ========== CONTACT FORM FUNCTIONALITY ==========
+        const contactForm = document.querySelector('#contact form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const formData = new FormData(this);
+                const data = {
+                    name: formData.get('name'),
+                    email: formData.get('email'),
+                    subject: formData.get('subject'),
+                    message: formData.get('message')
+                };
+    
+                // Simple validation
+                if (!data.name || !data.email || !data.message) {
+                    alert('يرجى ملء جميع الحقول المطلوبة');
+                    return;
+                }
+    
+                // Email validation
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(data.email)) {
+                    alert('يرجى إدخال بريد إلكتروني صحيح');
+                    return;
+                }
+    
+                // Simulate form submission
+                const submitBtn = this.querySelector('button[type="submit"]');
+                const originalText = submitBtn.textContent;
+                submitBtn.textContent = 'جاري الإرسال...';
+                submitBtn.disabled = true;
+    
+                setTimeout(() => {
+                    submitBtn.textContent = 'تم الإرسال !';
+                    submitBtn.classList.add('bg-green-600');
+                    submitBtn.classList.remove('bg-[#432d17]');
+                    this.reset();
+                    
+                    // Reset button after 3 seconds
+                    setTimeout(() => {
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+                        submitBtn.classList.remove('bg-green-600');
+                        submitBtn.classList.add('bg-[#432d17]');
+                    }, 3000);
+                }, 2000);
+            });
+        }
+    
+        // ========== SCROLL TO TOP FUNCTIONALITY ==========
+        let scrollToTopBtn = document.getElementById('scroll-to-top');
+        if (!scrollToTopBtn) {
+            scrollToTopBtn = document.createElement('button');
+            scrollToTopBtn.id = 'scroll-to-top';
+            scrollToTopBtn.className = 'fixed bottom-6 left-6 bg-primary text-white w-12 h-12 rounded-full shadow-lg hover:bg-primary/90 transition-all duration-300 z-50';
+            scrollToTopBtn.innerHTML = '<i class="fas fa-chevron-up"></i>';
+            document.body.appendChild(scrollToTopBtn);
+        } else {
+            scrollToTopBtn.className = 'fixed bottom-6 left-6 bg-primary text-white w-12 h-12 rounded-full shadow-lg hover:bg-primary/90 transition-all duration-300 z-50';
+        }
+        scrollToTopBtn.style.display = 'none';
+    
+        scrollToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.style.display = 'flex';
+                scrollToTopBtn.style.alignItems = 'center';
+                scrollToTopBtn.style.justifyContent = 'center';
+            } else {
+                scrollToTopBtn.style.display = 'none';
             }
         });
-
-        links.forEach((link, index) => {
-            link.addEventListener('keydown', function(e) {
-                if (e.key === 'ArrowDown') {
+    
+        // ========== SMOOTH SCROLLING FOR ANCHOR LINKS ==========
+        const anchorLinks = document.querySelectorAll('a[href^="#"]');
+        anchorLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    
+        // ========== SERVICE CARDS INTERACTIONS ==========
+        const serviceCards = document.querySelectorAll('.hero-content .grid > div, .grid.grid-cols-2.md\\:grid-cols-4.lg\\:grid-cols-6 > div');
+        serviceCards.forEach(card => {
+            card.addEventListener('click', function() {
+                const serviceName = this.querySelector('h3').textContent;
+                alert(`سيتم توجيهكم إلى صفحة ${serviceName} قريباً`);
+            });
+        });
+    
+        // ========== ACCESSIBILITY ENHANCEMENTS ==========
+        
+        // Keyboard navigation for dropdowns
+        dropdowns.forEach(dropdown => {
+            const button = dropdown.querySelector('button');
+            const links = dropdown.querySelectorAll('a');
+            
+            button.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
                     e.preventDefault();
-                    const nextLink = links[index + 1];
-                    if (nextLink) nextLink.focus();
-                } else if (e.key === 'ArrowUp') {
+                    this.click();
+                } else if (e.key === 'ArrowDown') {
                     e.preventDefault();
-                    const prevLink = links[index - 1];
-                    if (prevLink) {
-                        prevLink.focus();
-                    } else {
+                    const content = dropdown.querySelector('.dropdown-content');
+                    if (content.style.display === 'block') {
+                        const firstLink = content.querySelector('a');
+                        if (firstLink) firstLink.focus();
+                    }
+                }
+            });
+    
+            links.forEach((link, index) => {
+                link.addEventListener('keydown', function(e) {
+                    if (e.key === 'ArrowDown') {
+                        e.preventDefault();
+                        const nextLink = links[index + 1];
+                        if (nextLink) nextLink.focus();
+                    } else if (e.key === 'ArrowUp') {
+                        e.preventDefault();
+                        const prevLink = links[index - 1];
+                        if (prevLink) {
+                            prevLink.focus();
+                        } else {
+                            button.focus();
+                        }
+                    } else if (e.key === 'Escape') {
+                        dropdown.querySelector('.dropdown-content').style.display = 'none';
+                        button.setAttribute('aria-expanded', 'false');
                         button.focus();
                     }
-                } else if (e.key === 'Escape') {
-                    dropdown.querySelector('.dropdown-content').style.display = 'none';
-                    button.setAttribute('aria-expanded', 'false');
-                    button.focus();
-                }
+                });
             });
         });
-    });
-
-    // ========== MOBILE MENU DROPDOWN FUNCTIONALITY ==========
-    const mobileDropdowns = document.querySelectorAll('.mobile-dropdown');
-    mobileDropdowns.forEach(drop => {
-        const btn = drop.querySelector('button');
-        const content = drop.querySelector('.mobile-dropdown-content');
-        
-        // Handle dropdown button click (show/hide dropdown within mobile menu)
-        btn.addEventListener('click', function(e) {
-            e.preventDefault();
+    
+        // ========== MOBILE MENU DROPDOWN FUNCTIONALITY ==========
+        const mobileDropdowns = document.querySelectorAll('.mobile-dropdown');
+        mobileDropdowns.forEach(drop => {
+            const btn = drop.querySelector('button');
+            const content = drop.querySelector('.mobile-dropdown-content');
             
-            // Close other dropdowns
-            mobileDropdowns.forEach(other => {
-                if (other !== drop) {
-                    other.querySelector('.mobile-dropdown-content').classList.add('hidden');
-                }
+            // Handle dropdown button click (show/hide dropdown within mobile menu)
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Close other dropdowns
+                mobileDropdowns.forEach(other => {
+                    if (other !== drop) {
+                        other.querySelector('.mobile-dropdown-content').classList.add('hidden');
+                    }
+                });
+                
+                // Toggle current dropdown
+                content.classList.toggle('hidden');
             });
             
-            // Toggle current dropdown
-            content.classList.toggle('hidden');
+            // Handle clicks on dropdown links (close mobile menu)
+            const dropdownLinks = content.querySelectorAll('a');
+            dropdownLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    // Close mobile menu when a dropdown link is clicked
+                    mobileMenu.classList.add('hidden');
+                    const icon = mobileMenuBtn.querySelector('i');
+                    icon.classList.add('fa-bars');
+                    icon.classList.remove('fa-times');
+                    
+                    // Hide all dropdowns
+                    mobileDropdowns.forEach(dropdown => {
+                        dropdown.querySelector('.mobile-dropdown-content').classList.add('hidden');
+                    });
+                });
+            });
         });
-        
-        const dropdownLinks = content.querySelectorAll('a');
-        dropdownLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
+    
+        // ========== MOBILE MENU REGULAR LINKS ==========
+        const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                // Close mobile menu when regular link is clicked
                 mobileMenu.classList.add('hidden');
                 const icon = mobileMenuBtn.querySelector('i');
                 icon.classList.add('fa-bars');
                 icon.classList.remove('fa-times');
-                
-                mobileDropdowns.forEach(dropdown => {
-                    dropdown.querySelector('.mobile-dropdown-content').classList.add('hidden');
+            });
+        });
+    
+        // ========== PERFORMANCE OPTIMIZATIONS ==========
+        
+        // Lazy loading for images (if supported)
+        if ('IntersectionObserver' in window) {
+            const lazyImages = document.querySelectorAll('img[data-src]');
+            const imageObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.classList.remove('lazy');
+                        imageObserver.unobserve(img);
+                    }
                 });
             });
-        });
-    });
-
-    // ========== MOBILE MENU REGULAR LINKS ==========
-    const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
-    mobileMenuLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            // Close mobile menu when regular link is clicked
-            mobileMenu.classList.add('hidden');
-            const icon = mobileMenuBtn.querySelector('i');
-            icon.classList.add('fa-bars');
-            icon.classList.remove('fa-times');
-        });
-    });
-
-    // ========== PERFORMANCE OPTIMIZATIONS ==========
     
-    // Lazy loading for images (if supported)
-    if ('IntersectionObserver' in window) {
-        const lazyImages = document.querySelectorAll('img[data-src]');
-        const imageObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    img.src = img.dataset.src;
-                    img.classList.remove('lazy');
-                    imageObserver.unobserve(img);
-                }
-            });
-        });
-
-        lazyImages.forEach(img => imageObserver.observe(img));
-    }
-
-    // ========== ERROR HANDLING ==========
-    window.addEventListener('error', function(e) {
-        console.error('JavaScript Error:', e.error);
-        // Could send error to logging service here
-    });
-
-    // ========== INITIALIZATION COMPLETE ==========
-    
-    // Dispatch custom event to indicate site is ready
-    const siteReadyEvent = new CustomEvent('siteReady', {
-        detail: { message: 'الموقع جاهز للاستخدام' }
-    });
-    document.dispatchEvent(siteReadyEvent);
-});
-
-// Hero carousel: auto-slide every 3s and draggable left/right; arrows/dots hidden via CSS
-document.addEventListener('DOMContentLoaded', function () {
-    const INTERVAL = 3000; // 3 seconds
-    const carousel = document.querySelector('.hero-carousel');
-    if (!carousel) return;
-
-    const slides = Array.from(carousel.querySelectorAll('.hero-slide.manual-slide'));
-    if (!slides.length) return;
-
-    let current = slides.findIndex(s => s.classList.contains('active'));
-    if (current < 0) {
-        current = 0;
-        slides[0].classList.add('active');
-    }
-
-    let timer = null;
-
-    function showSlide(index) {
-        if (!slides.length) return;
-        const nextIndex = (index + slides.length) % slides.length;
-        if (nextIndex === current) return;
-        slides[current].classList.remove('active');
-        slides[nextIndex].classList.add('active');
-        current = nextIndex;
-    }
-
-    function nextSlide() { showSlide(current + 1); }
-    function prevSlide() { showSlide(current - 1); }
-
-    function startAuto() {
-        stopAuto();
-        timer = setInterval(nextSlide, INTERVAL);
-    }
-    function stopAuto() {
-        if (timer) { clearInterval(timer); timer = null; }
-    }
-
-    // Basic swipe/drag support (touch and pointer)
-    let startX = 0;
-    let dragging = false;
-
-    const getX = (e) => {
-        if (e.touches && e.touches[0]) return e.touches[0].clientX;
-        if (e.changedTouches && e.changedTouches[0]) return e.changedTouches[0].clientX;
-        return e.clientX;
-    };
-
-    const onStart = (e) => {
-        dragging = true;
-        startX = getX(e) || 0;
-        stopAuto();
-    };
-    const onEnd = (e) => {
-        if (!dragging) return;
-        dragging = false;
-        const endX = getX(e) || 0;
-        const dx = endX - startX;
-        const threshold = 40; // px
-        if (dx > threshold) {
-            // drag right -> previous slide
-            prevSlide();
-        } else if (dx < -threshold) {
-            // drag left -> next slide
-            nextSlide();
+            lazyImages.forEach(img => imageObserver.observe(img));
         }
-        startAuto();
-    };
-
-    // Pointer events (modern browsers)
-    carousel.addEventListener('pointerdown', onStart, { passive: true });
-    carousel.addEventListener('pointerup', onEnd);
-    carousel.addEventListener('pointercancel', onEnd);
-
-    // Touch events (fallback)
-    carousel.addEventListener('touchstart', onStart, { passive: true });
-    carousel.addEventListener('touchend', onEnd);
-    carousel.addEventListener('touchcancel', onEnd);
-
-    startAuto();
-});
-
-// ========== UTILITY FUNCTIONS ==========
-
-// Function to format numbers in Arabic
-function formatArabicNumber(number) {
-    return number.toString().replace(/\d/g, function(d) {
-        return '٠١٢٣٤٥٦٧٨٩'[d];
-    });
-}
-
-// Function to handle RTL text direction
-function handleRTL() {
-    document.documentElement.setAttribute('dir', 'rtl');
-    document.documentElement.setAttribute('lang', 'ar');
-}
-
-// Function to detect if user prefers reduced motion
-function respectsReducedMotion() {
-    return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-}
-
-// Apply reduced motion preferences
-if (respectsReducedMotion()) {
-    const style = document.createElement('style');
-    style.textContent = `
-        *, *::before, *::after {
-            animation-duration: 0.01ms !important;
-            animation-iteration-count: 1 !important;
-            transition-duration: 0.01ms !important;
-        }
-    `;
-    document.head.appendChild(style);
-}
-
-// Load 6 random news cards from database for homepage ticker
-(async function() {
-    const ticker = document.getElementById('homepage-news-ticker');
-    if (!ticker) return;
     
-    try {
-        // Show loading state
-        ticker.innerHTML = `
-            <div class="bg-white rounded-lg shadow-lg p-6 text-center flex-shrink-0" style="min-width: 320px;">
-                <i class="fas fa-spinner fa-spin text-gray-400 text-4xl mb-2"></i>
-                <h3 class="text-lg font-bold text-gray-800 mb-2">جاري تحميل الأخبار...</h3>
-            </div>
+        // ========== ERROR HANDLING ==========
+        window.addEventListener('error', function(e) {
+            console.error('JavaScript Error:', e.error);
+            // Could send error to logging service here
+        });
+    
+        // ========== INITIALIZATION COMPLETE ==========
+        
+        // Dispatch custom event to indicate site is ready
+        const siteReadyEvent = new CustomEvent('siteReady', {
+            detail: { message: 'الموقع جاهز للاستخدام' }
+        });
+        document.dispatchEvent(siteReadyEvent);
+    });
+    
+    // ========== UTILITY FUNCTIONS ==========
+    
+    // Function to format numbers in Arabic
+    function formatArabicNumber(number) {
+        return number.toString().replace(/\d/g, function(d) {
+            return '٠١٢٣٤٥٦٧٨٩'[d];
+        });
+    }
+    
+    // Function to handle RTL text direction
+    function handleRTL() {
+        document.documentElement.setAttribute('dir', 'rtl');
+        document.documentElement.setAttribute('lang', 'ar');
+    }
+    
+    // Function to detect if user prefers reduced motion
+    function respectsReducedMotion() {
+        return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    }
+    
+    // Apply reduced motion preferences
+    if (respectsReducedMotion()) {
+        const style = document.createElement('style');
+        style.textContent = `
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
         `;
-        
-        const savedNews = await databaseService.getAllNews();
-    
-    if (savedNews.length === 0) {
-        ticker.innerHTML = `
-            <div class="bg-white rounded-lg shadow-lg p-6 text-center flex-shrink-0" style="min-width: 320px;">
-                <i class="fas fa-newspaper text-gray-400 text-4xl mb-2"></i>
-                <h3 class="text-lg font-bold text-gray-800 mb-2">لا توجد أخبار</h3>
-                <p class="text-gray-600 text-sm">سيتم عرض الأخبار هنا عند إضافتها من لوحة التحكم</p>
-            </div>
-        `;
-        return;
-    }
-    
-    // Shuffle and pick 6
-    const shuffled = [...savedNews];
-    for (let i = shuffled.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-    }
-    const selected = shuffled.slice(0, 6);
-    
-    // Format date function
-    function formatDate(dateString) {
-        const date = new Date(dateString);
-        const months = ['يناير','فبراير','مارس','ابريل','مايو','يونيو','يوليو','اغسطس','سبتمبر','اكتوبر','نوفمبر','ديسمبر'];
-        return `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`;
-    }
-    
-    // Check if we should animate (more than 3 cards)
-    const shouldAnimate = selected.length > 3;
-    
-    // Remove animation class if not needed
-    const tickerContainer = ticker.parentElement;
-    if (shouldAnimate) {
-        ticker.classList.add('news-scroll');
-        // Duplicate cards for smooth infinite scroll like partners
-        const allCards = [...selected, ...selected];
-        
-        // Generate cards HTML
-        ticker.innerHTML = allCards.map(newsItem => {
-            const TEXT_LIMIT = 100; // Shorter limit for homepage cards
-            const mainText = newsItem.mainText || '';
-            const excerptText = mainText.length > TEXT_LIMIT ? mainText.substring(0, TEXT_LIMIT) + '...' : mainText;
-            
-            return `
-                <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 flex-shrink-0" style="min-width: 320px; max-width: 340px;">
-                    <img src="${newsItem.image}" alt="${newsItem.title}" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-lg font-bold text-gray-800 mb-2 line-clamp-2">${newsItem.title}</h3>
-                        <p class="text-gray-600 text-sm mb-3 line-clamp-3">${excerptText}</p>
-                        <div class="text-xs text-gray-500">${formatDate(newsItem.date)}</div>
-                    </div>
-                </article>
-            `;
-        }).join('');
-    } else {
-        ticker.classList.remove('news-scroll');
-        ticker.style.justifyContent = 'center';
-        ticker.style.gap = '2rem';
-        
-        // Generate cards HTML without duplication
-        ticker.innerHTML = selected.map(newsItem => {
-            const TEXT_LIMIT = 100; // Shorter limit for homepage cards
-            const mainText = newsItem.mainText || '';
-            const excerptText = mainText.length > TEXT_LIMIT ? mainText.substring(0, TEXT_LIMIT) + '...' : mainText;
-            
-            return `
-                <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 flex-shrink-0" style="min-width: 320px; max-width: 340px;">
-                    <img src="${newsItem.image}" alt="${newsItem.title}" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-lg font-bold text-gray-800 mb-2 line-clamp-2">${newsItem.title}</h3>
-                        <p class="text-gray-600 text-sm mb-3 line-clamp-3">${excerptText}</p>
-                        <div class="text-xs text-gray-500">${formatDate(newsItem.date)}</div>
-                    </div>
-                </article>
-            `;
-        }).join('');
-    }
-    } catch (error) {
-        console.error('Error loading news for homepage:', error);
-        ticker.innerHTML = `
-            <div class="bg-white rounded-lg shadow-lg p-6 text-center flex-shrink-0" style="min-width: 320px;">
-                <i class="fas fa-exclamation-triangle text-red-400 text-4xl mb-2"></i>
-                <h3 class="text-lg font-bold text-red-800 mb-2">خطأ في تحميل الأخبار</h3>
-                <p class="text-gray-600 text-sm">تعذر الاتصال بقاعدة البيانات</p>
-            </div>
-        `;
-    }
-})();
-
-    // ========== SIMPLE CAROUSEL WITH DATABASE IMAGES (NO MOVEMENT) ==========
-    async function loadCarouselFromDatabase() {
-        try {
-            const dbService = new DatabaseService();
-            const images = await dbService.getAllCarouselImages();
-            const activeImages = images.filter(img => img.is_active).sort((a, b) => a.sort_order - b.sort_order);
-            
-            const carousel = document.querySelector('.hero-carousel');
-            const slidesContainer = carousel.querySelector('.hero-slide')?.parentNode || carousel;
-            const dotsContainer = document.querySelector('.carousel-dots');
-            
-            // Clear existing slides and dots
-            const existingSlides = carousel.querySelectorAll('.hero-slide');
-            const existingDots = dotsContainer.querySelectorAll('.carousel-dot');
-            existingSlides.forEach(slide => slide.remove());
-            existingDots.forEach(dot => dot.remove());
-            
-            if (activeImages.length > 0) {
-                // Mark that DB-driven carousel is active (used to enable auto-slide)
-                window.DB_CAROUSEL_ACTIVE = true;
-                // Create slides from database images
-                activeImages.forEach((image, index) => {
-                    const slide = document.createElement('div');
-                    slide.className = `hero-slide ${index === 0 ? 'active' : ''}`;
-                    slide.innerHTML = `<img src="${sanitizeHTML(image.image_url)}" alt="${sanitizeHTML(image.alt_text || 'صورة البطل')}" class="carousel-image">`;
-                    carousel.insertBefore(slide, carousel.querySelector('.carousel-arrow'));
-                    
-                    const dot = document.createElement('button');
-                    dot.className = `carousel-dot ${index === 0 ? 'active' : ''}`;
-                    dot.setAttribute('data-slide', index);
-                    dot.setAttribute('aria-label', `Slide ${index + 1}`);
-                    dotsContainer.appendChild(dot);
-                });
-                // Images loaded successfully
-            } else {
-                // Fallback to default image if no active images in database
-                window.DB_CAROUSEL_ACTIVE = true; // still DB-managed (single slide means no movement)
-                const slide = document.createElement('div');
-                slide.className = 'hero-slide active';
-                slide.innerHTML = '<img src="assets/hdr-background.jpg" alt="صورة افتراضية" class="carousel-image">';
-                carousel.insertBefore(slide, carousel.querySelector('.carousel-arrow'));
-                
-                const dot = document.createElement('button');
-                dot.className = 'carousel-dot active';
-                dot.setAttribute('data-slide', '0');
-                dot.setAttribute('aria-label', 'Slide 1');
-                dotsContainer.appendChild(dot);
-                // Using default image
-            }
-            
-            // Setup navigation after images are loaded
-            setTimeout(() => {
-                setupCarouselNavigation();
-            }, 100); // Small delay to ensure DOM is updated
-            
-        } catch (error) {
-            console.error('Error loading carousel images:', error);
-            // Fallback: keep existing hardcoded images
-        }
-    }
-
-    // Prefer database-driven carousel; fallback to manual slides if DB empty or fails
-    (async function initCarousel() {
-        try {
-            await loadCarouselFromDatabase();
-        } catch (e) {
-            // Fallback to manual dots if DB not available
-            const dotsContainer = document.querySelector('.carousel-dots');
-            const slides = document.querySelectorAll('.hero-slide.manual-slide');
-            if (!dotsContainer || slides.length === 0) return;
-            dotsContainer.innerHTML = '';
-            slides.forEach((_, index) => {
-                const dot = document.createElement('button');
-                dot.className = `carousel-dot ${index === 0 ? 'active' : ''}`;
-                dot.setAttribute('data-slide', index.toString());
-                dot.setAttribute('aria-label', `Slide ${index + 1}`);
-                dotsContainer.appendChild(dot);
-            });
-            setTimeout(() => {
-                setupCarouselNavigation();
-            }, 50);
-        }
-    })();
-    
-    // ========== CAROUSEL NAVIGATION FUNCTIONS ==========
-    let currentSlide = 0;
-    let totalSlides = 0;
-    let autoSlideInterval = null;
-    let isAutoSliding = true;
-
-    function showSlide(index, direction = 'next') {
-        const slides = document.querySelectorAll('.hero-slide');
-        const dots = document.querySelectorAll('.carousel-dot');
-        
-        if (slides.length === 0 || index === currentSlide) return;
-        
-        totalSlides = slides.length;
-        const currentSlideElement = slides[currentSlide];
-        const nextSlideElement = slides[index];
-        const carousel = document.querySelector('.hero-carousel');
-
-        // Lock container height during transition to avoid collapse/jump
-        if (carousel) {
-            const currentHeight = carousel.offsetHeight;
-            if (currentHeight > 0) {
-                carousel.style.height = currentHeight + 'px';
-            }
-        }
-        
-        // Force browser reflow to ensure consistent timing
-        currentSlideElement?.offsetHeight;
-        nextSlideElement?.offsetHeight;
-        
-        // Remove only transition classes; keep current 'active' until next is active
-        slides.forEach(slide => {
-            slide.classList.remove('slide-out-left', 'slide-out-right');
-        });
-        
-        // Set initial positions before transition
-        if (direction === 'next') {
-            // Next slide starts from the right
-            nextSlideElement?.classList.add('slide-out-right');
-        } else {
-            // Next slide starts from the left  
-            nextSlideElement?.classList.add('slide-out-left');
-        }
-        
-        // Force reflow to ensure initial position is set
-        nextSlideElement?.offsetHeight;
-        
-        // Small delay to ensure consistent transition timing
-        setTimeout(() => {
-            // Apply transitions based on direction
-            if (direction === 'next') {
-                currentSlideElement?.classList.add('slide-out-left');
-                nextSlideElement?.classList.remove('slide-out-right');
-                nextSlideElement?.classList.add('active');
-                // Now that next is active, remove active from previous
-                currentSlideElement?.classList.remove('active');
-            } else {
-                currentSlideElement?.classList.add('slide-out-right');
-                nextSlideElement?.classList.remove('slide-out-left');
-                nextSlideElement?.classList.add('active');
-                // Now that next is active, remove active from previous
-                currentSlideElement?.classList.remove('active');
-            }
-
-            // Release height lock after transition completes
-            if (carousel) {
-                const release = () => {
-                    carousel.style.height = '';
-                    nextSlideElement?.removeEventListener('transitionend', release);
-                };
-                // Fallback: release after 700ms if transitionend isn't fired
-                nextSlideElement?.addEventListener('transitionend', release, { once: true });
-                setTimeout(release, 700);
-            }
-        }, 10); // Small delay for consistent timing
-        
-        // Update dots
-        dots.forEach((dot, i) => {
-            dot.classList.remove('active');
-            if (i === index) {
-                dot.classList.add('active');
-            }
-        });
-        
-        currentSlide = index;
-    }
-
-    function nextSlide() {
-        const slides = document.querySelectorAll('.hero-slide');
-        if (slides.length === 0) return;
-        
-        const next = (currentSlide + 1) % slides.length;
-        showSlide(next, 'next');
-    }
-
-    function prevSlide() {
-        const slides = document.querySelectorAll('.hero-slide');
-        if (slides.length === 0) return;
-        
-        const prev = (currentSlide - 1 + slides.length) % slides.length;
-        showSlide(prev, 'prev');
-    }
-
-    // ========== AUTO-SLIDE FUNCTIONALITY ==========
-    function startAutoSlide() {
-        // Only enable auto-slide when DB-driven carousel is active
-        if (!window.DB_CAROUSEL_ACTIVE) return;
-        const slides = document.querySelectorAll('.hero-slide');
-        if (slides.length <= 1) return; // nothing to slide
-
-        // Clear any existing interval first
-        if (autoSlideInterval) {
-            clearInterval(autoSlideInterval);
-            autoSlideInterval = null;
-        }
-
-        autoSlideInterval = setInterval(() => {
-            if (isAutoSliding) {
-                nextSlide();
-            }
-        }, 3000); // 3 seconds
-    }
-
-    function pauseAutoSlide() {
-        isAutoSliding = false;
-        if (autoSlideInterval) {
-            clearInterval(autoSlideInterval);
-            autoSlideInterval = null;
-        }
-    }
-
-    function resumeAutoSlide() {
-        if (!window.DB_CAROUSEL_ACTIVE) return;
-        if (!isAutoSliding) {
-            isAutoSliding = true;
-            startAutoSlide();
-        }
-    }
-
-    function restartAutoSlide() {
-        if (!window.DB_CAROUSEL_ACTIVE) return;
-        if (autoSlideInterval) {
-            clearInterval(autoSlideInterval);
-            autoSlideInterval = null;
-        }
-        isAutoSliding = true;
-        startAutoSlide();
-    }
-
-    // ========== ARROW CLICK HANDLERS ==========
-    function setupArrowHandlers() {
-        const prevBtn = document.getElementById('prevSlide');
-        const nextBtn = document.getElementById('nextSlide');
-        
-        // Left arrow goes to next slide (swipe right)
-        prevBtn?.addEventListener('click', () => {
-            nextSlide();
-            // restartAutoSlide(); // Auto-slide disabled
-        });
-        
-        // Right arrow goes to previous slide (swipe left)  
-        nextBtn?.addEventListener('click', () => {
-            prevSlide();
-            // restartAutoSlide(); // Auto-slide disabled
-        });
-        
-        // Arrow handlers active
-    }
-
-    // ========== DOT CLICK HANDLERS ==========
-    function setupDotHandlers() {
-        const dots = document.querySelectorAll('.carousel-dot');
-        
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                const direction = index > currentSlide ? 'next' : 'prev';
-                showSlide(index, direction);
-                // restartAutoSlide(); // Auto-slide disabled
-            });
-        });
-        
-        // Dot handlers active
-    }
-
-    // ========== HOVER HANDLERS ==========
-    function setupHoverHandlers() {
-        const carousel = document.querySelector('.hero-carousel');
-        if (!carousel) return;
-        carousel.addEventListener('mouseenter', () => {
-            pauseAutoSlide();
-        });
-        carousel.addEventListener('mouseleave', () => {
-            resumeAutoSlide();
-        });
-    }
-
-    // ========== TOUCH/SWIPE HANDLERS ==========
-    function setupSwipeHandlers() {
-        const carousel = document.querySelector('.hero-carousel');
-        if (!carousel) return;
-        
-        let touchStartX = 0;
-        let touchEndX = 0;
-        let isDragging = false;
-        let startTime = 0;
-        let lastSwipeTime = 0; // Debounce rapid swipes
-        
-        // Touch events for mobile
-        carousel.addEventListener('touchstart', (e) => {
-            touchStartX = e.changedTouches[0].screenX;
-            startTime = Date.now();
-            isDragging = true;
-            pauseAutoSlide(); // Pause auto-slide during touch
-        }, { passive: true });
-        
-        carousel.addEventListener('touchmove', (e) => {
-            if (!isDragging) return;
-            // Prevent default scrolling during swipe
-            e.preventDefault();
-        }, { passive: false });
-        
-        carousel.addEventListener('touchend', (e) => {
-            if (!isDragging) return;
-            touchEndX = e.changedTouches[0].screenX;
-            handleSwipe();
-            isDragging = false;
-            resumeAutoSlide();
-        }, { passive: true });
-        
-        // Mouse events for desktop drag
-        carousel.addEventListener('mousedown', (e) => {
-            touchStartX = e.clientX;
-            startTime = Date.now();
-            isDragging = true;
-            pauseAutoSlide();
-            e.preventDefault(); // Prevent text selection
-        });
-        
-        carousel.addEventListener('mousemove', (e) => {
-            if (!isDragging) return;
-            e.preventDefault();
-        });
-        
-        carousel.addEventListener('mouseup', (e) => {
-            if (!isDragging) return;
-            touchEndX = e.clientX;
-            handleSwipe();
-            isDragging = false;
-            resumeAutoSlide();
-        });
-        
-        carousel.addEventListener('mouseleave', () => {
-            if (isDragging) {
-                isDragging = false;
-                // resumeAutoSlide(); // Auto-slide disabled
-            }
-        });
-        
-        function handleSwipe() {
-            const swipeDistance = touchEndX - touchStartX;
-            const swipeTime = Date.now() - startTime;
-            const currentTime = Date.now();
-            const minSwipeDistance = 50; // Minimum distance for swipe
-            const maxSwipeTime = 500; // Maximum time for swipe (ms)
-            const debounceTime = 300; // Minimum time between swipes (ms)
-            
-            // Debounce rapid swipes
-            if (currentTime - lastSwipeTime < debounceTime) {
-                // Swipe ignored - too rapid
-                return;
-            }
-            
-            // Check if it's a valid swipe
-            if (Math.abs(swipeDistance) >= minSwipeDistance && swipeTime <= maxSwipeTime) {
-                lastSwipeTime = currentTime;
-                
-                if (swipeDistance > 0) {
-                    // Swiped right - go to next slide
-                    nextSlide();
-                } else {
-                    // Swiped left - go to previous slide  
-                    prevSlide();
-                }
-                
-                // Delayed restart to prevent timer conflicts
-                setTimeout(() => {
-                    restartAutoSlide(); 
-                }, 50);
-            }
-        }
-        
-        // Swipe handlers active
-    }
-
-    // ========== MAIN CAROUSEL SETUP ==========
-    function setupCarouselNavigation() {
-        const slides = document.querySelectorAll('.hero-slide');
-        const dots = document.querySelectorAll('.carousel-dot');
-        
-        if (slides.length === 0) {
-            // No slides found
-            return;
-        }
-        
-        // Set initial state
-        currentSlide = 0;
-        totalSlides = slides.length;
-        
-        setupArrowHandlers();
-        setupDotHandlers();
-        setupHoverHandlers();
-        setupSwipeHandlers();
-        
-        startAutoSlide();
-        
-    }
-
-    // ========== TIMELINE INTERACTIONS (Program Highlights) ==========
-    (function setupTimelineInteractions(){
-        const section = document.querySelector('#program-highlights');
-        if (!section) return;
-        const timeline = section.querySelector('.timeline');
-        const items = Array.from(section.querySelectorAll('.timeline-item'));
-        if (!timeline || !items.length) return;
-
-        items.forEach((el, idx) => { el.dataset.index = String(idx); });
-
-        const activate = (index) => {
-            items.forEach(el => el.classList.remove('is-active'));
-            const clamped = Math.max(0, Math.min(items.length - 1, index));
-            items[clamped].classList.add('is-active');
-        };
-
-        let ticking = false;
-        const onScroll = () => {
-            if (ticking) return; ticking = true;
-            requestAnimationFrame(() => {
-                // Choose an anchor slightly above center so the user can see the line head while scrolling
-                const center = window.innerHeight * 0.4; // 40% from top
-                let bestIdx = 0; let bestDist = Infinity;
-                items.forEach((el, i) => {
-                    const r = el.getBoundingClientRect();
-                    const mid = r.top + r.height / 2;
-                    const d = Math.abs(mid - center);
-                    if (d < bestDist) { bestDist = d; bestIdx = i; }
-                });
-                activate(bestIdx);
-
-                // Continuous progress along the timeline (smooth roll)
-                const tlRect = timeline.getBoundingClientRect();
-                const viewportBottom = window.innerHeight;
-                // Raise the visible head of the line above the bottom so it's not hidden
-                const bottomOffset = 120; // px above bottom edge
-                const viewportBottomAdj = viewportBottom - bottomOffset;
-                // amount of timeline revealed in viewport (from top)
-                const revealed = Math.min(Math.max(viewportBottomAdj - tlRect.top, 0), tlRect.height);
-                const ratio = tlRect.height > 0 ? revealed / tlRect.height : 0;
-                const pct = Math.max(0, Math.min(100, ratio * 100));
-                timeline.style.setProperty('--tl-progress', pct + '%');
-                ticking = false;
-            });
-        };
-
-        // Initialize and bind
-        activate(0);
-        window.addEventListener('scroll', onScroll, { passive: true });
-        window.addEventListener('resize', onScroll);
-        // Trigger once in case user loads mid-page
-        onScroll();
-    })();
-
-</script>
-</body>
-</html>
+        document.head.appendChild(style);
+    }; 
+        </script>
+    </body>
+    </html>

@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>جمعية تبيان لخدمة ضيوف الرحمن - التقرير السنوي لعام 2025</title>
+    <title>الأهداف | جمعية تبيان لخدمة ضيوف الرحمن</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
- <link rel="stylesheet" href="theme.css">
-    <style>
+   <link rel="stylesheet" href="theme.css">
+        <style>
         :root {
             --color-primary: #0f5a4a;   /* logo deep green */
             --color-accent:  #a07a47;   /* logo gold/brown */
@@ -1317,11 +1317,17 @@
                 background: var(--color-accent) !important;
             }
         }
-        /* Mobile: achievements transparent to reveal body background */
+        /* Mobile: achievements use site primary color background (force) */
         @media (max-width: 768px) {
-            .achievements-bg {
-                background: transparent !important;
+            .achievements-bg,
+            .achievements-bg::before,
+            .achievements-bg::after {
+                background-color: var(--color-primary) !important;
                 background-image: none !important;
+                background: var(--color-primary) !important;
+                background-repeat: no-repeat !important;
+                background-size: auto !important;
+                background-position: initial !important;
             }
         }
         /* Ensure the News Highlights section (#news) stays primary green on phones */
@@ -1391,6 +1397,12 @@
                             <a href="board-of-directors.html" class="block px-4 py-2 text-gray-700 hover:bg-[#6e1948]/10"><i class="fas fa-user-tie ml-2 text-[#6e1948]"></i>قرار التأسيس</a>
                             <a href="organizational-structure.html" class="block px-4 py-2 text-gray-700 hover:bg-[#6e1948]/10"><i class="fas fa-sitemap ml-2 text-[#6e1948]"></i>الهيكل التنظيمي</a>
                             <a href="work-team.html" class="block px-4 py-2 text-gray-700 hover:bg-[#6e1948]/10"><i class="fas fa-user-friends ml-2 text-[#6e1948]"></i>اعضاء مجلس الإدارة</a>
+                            <a href="message.html" class="block px-4 py-2 text-gray-700 hover:bg-[#6e1948]/10"><i class="fas fa-comment-dots ml-2 text-[#6e1948]"></i>رسالتنا</a>
+                            <a href="vision.html" class="block px-4 py-2 text-gray-700 hover:bg-[#6e1948]/10"><i class="fas fa-eye ml-2 text-[#6e1948]"></i>رؤيتنا</a>
+                            <a href="strategicMap.html" class="block px-4 py-2 text-gray-700 hover:bg-[#6e1948]/10"><i class="fas fa-map ml-2 text-[#6e1948]"></i>الخارطة الإستراتيجية</a>
+                            <a href="goals.html" class="block px-4 py-2 text-gray-700 hover:bg-[#6e1948]/10"><i class="fas fa-bullseye ml-2 text-[#6e1948]"></i>الأهداف</a>
+                            <a href="mainBoard.html" class="block px-4 py-2 text-gray-700 hover:bg-[#6e1948]/10"><i class="fas fa-scroll ml-2 text-[#6e1948]"></i>اللائحة</a>
+                            <a href="contact.html" class="block px-4 py-2 text-gray-700 hover:bg-[#6e1948]/10"><i class="fas fa-envelope-open-text ml-2 text-[#6e1948]"></i>تواصل معنا</a>
                         </div>
                     </div>
                     
@@ -1399,7 +1411,7 @@
                             التقارير <i class="fas fa-chevron-down mr-1 text-xs"></i>
                         </button>
                         <div class="dropdown-content">
-                            <a href="annual-report-2025.html" class="block px-4 py-2 text-gray-700 hover:bg-[#6e1948]/10"><i class="fas fa-file-alt ml-2 text-[#6e1948]"></i>التقرير السنوي لعام 2025</a>
+                            <a href="annual-report-2024.html" class="block px-4 py-2 text-gray-700 hover:bg-[#6e1948]/10"><i class="fas fa-file-alt ml-2 text-[#6e1948]"></i>التقرير السنوي لعام 2024</a>
                         </div>
                     </div>
                     
@@ -1421,7 +1433,7 @@
                             الحوكمة <i class="fas fa-chevron-down mr-1 text-xs"></i>
                         </button>
                         <div class="dropdown-content">
-                            <a href="/hawkamah" class="block px-4 py-2 text-gray-700 hover:bg-[#6e1948]/10"><i class="fas fa-book ml-2 text-[#6e1948]"></i>ادلة الحوكمة</a>
+                            <a href="hawkamah.html" class="block px-4 py-2 text-gray-700 hover:bg-[#6e1948]/10"><i class="fas fa-book ml-2 text-[#6e1948]"></i>ادلة الحوكمة</a>
                             <a href="privacy-policy.html" class="block px-4 py-2 text-gray-700 hover:bg-[#6e1948]/10"><i class="fas fa-shield-alt ml-2 text-[#6e1948]"></i>سياسة الخصوصية</a>
                         </div>
                     </div>
@@ -1478,6 +1490,12 @@
                         <a href="board-of-directors.html" class="block py-3 text-gray-700 hover:bg-[#6e1948]/10 rounded-lg"><i class="fas fa-user-tie ml-2 text-[#6e1948]"></i>قرار التأسيس</a>
                         <a href="organizational-structure.html" class="block py-3 text-gray-700 hover:bg-[#6e1948]/10 rounded-lg"><i class="fas fa-sitemap ml-2 text-[#6e1948]"></i>الهيكل التنظيمي</a>
                         <a href="work-team.html" class="block py-3 text-gray-700 hover:bg-[#6e1948]/10 rounded-lg"><i class="fas fa-user-friends ml-2 text-[#6e1948]"></i>اعضاء مجلس الإدارة</a>
+                        <a href="message.html" class="block py-3 text-gray-700 hover:bg-[#6e1948]/10 rounded-lg"><i class="fas fa-comment-dots ml-2 text-[#6e1948]"></i>رسالتنا</a>
+                        <a href="vision.html" class="block py-3 text-gray-700 hover:bg-[#6e1948]/10 rounded-lg"><i class="fas fa-eye ml-2 text-[#6e1948]"></i>رؤيتنا</a>
+                        <a href="strategicMap.html" class="block py-3 text-gray-700 hover:bg-[#6e1948]/10 rounded-lg"><i class="fas fa-map ml-2 text-[#6e1948]"></i>الخارطة الإستراتيجية</a>
+                        <a href="goals.html" class="block py-3 text-gray-700 hover:bg-[#6e1948]/10 rounded-lg"><i class="fas fa-bullseye ml-2 text-[#6e1948]"></i>الأهداف</a>
+                        <a href="mainBoard.html" class="block py-3 text-gray-700 hover:bg-[#6e1948]/10 rounded-lg"><i class="fas fa-scroll ml-2 text-[#6e1948]"></i>اللائحة</a>
+                        <a href="contact.html" class="block py-3 text-gray-700 hover:bg-[#6e1948]/10 rounded-lg"><i class="fas fa-envelope-open-text ml-2 text-[#6e1948]"></i>تواصل معنا</a>
                     </div>
                 </div>
                 <div class="mobile-dropdown">
@@ -1485,7 +1503,7 @@
                         التقارير <i class="fas fa-chevron-down"></i>
                     </button>
                     <div class="mobile-dropdown-content hidden pl-4 space-y-1">
-                        <a href="annual-report-2025.html" class="block py-3 text-gray-700 hover:bg-[#6e1948]/10 rounded-lg"><i class="fas fa-file-alt ml-2 text-[#6e1948]"></i>التقرير السنوي لعام 2025</a>
+                        <a href="annual-report-2024.html" class="block py-3 text-gray-700 hover:bg-[#6e1948]/10 rounded-lg"><i class="fas fa-file-alt ml-2 text-[#6e1948]"></i>التقرير السنوي لعام 2024</a>
                     </div>
                 </div>
                 <div class="mobile-dropdown">
@@ -1503,7 +1521,7 @@
                         الحوكمة <i class="fas fa-chevron-down"></i>
                     </button>
                     <div class="mobile-dropdown-content hidden pl-4 space-y-1">
-                        <a href="/hawkamah" class="block py-3 text-gray-700 hover:bg-[#6e1948]/10 rounded-lg"><i class="fas fa-book ml-2 text-[#6e1948]"></i>ادلة الحوكمة</a>
+                        <a href="hawkamah.html" class="block py-3 text-gray-700 hover:bg-[#6e1948]/10 rounded-lg"><i class="fas fa-book ml-2 text-[#6e1948]"></i>ادلة الحوكمة</a>
                         <a href="privacy-policy.html" class="block py-3 text-gray-700 hover:bg-[#6e1948]/10 rounded-lg"><i class="fas fa-shield-alt ml-2 text-[#6e1948]"></i>سياسة الخصوصية</a>
                     </div>
                 </div>
@@ -1521,21 +1539,117 @@
             </div>
         </div>
     </header>
+<style>
+    /* Ensure no horizontal overflow */
+    * {
+        box-sizing: border-box;
+    }
+</style>
 
-    <main class="min-h-screen bg-white">
-        <div class="max-w-7xl mx-auto px-4 py-16">
-            <div class="text-center mb-12">
-                <h1 class="text-4xl font-bold text-[#00a17d] mb-4">التقرير السنوي لعام 2025</h1>
-                <p class="text-xl text-gray-600">التقرير السنوي لعام 2025 لجمعية تبيان لخدمة ضيوف الرحمن</p>
+<main class="min-h-screen bg-white overflow-x-hidden">
+    <!-- Goals Section -->
+    <section class="py-16 bg-gray-50/70">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="section-header-container">
+                <h1 class="text-3xl md:text-4xl font-extrabold text-primary curved-underline gold">أهدافنا</h1>
+                <p class="section-subtitle text-gray-600 max-w-3xl mx-auto">تنطلق أهدافنا من رؤيتنا ورسالتنا، وتُترجم إلى مخرجات قابلة للقياس تُسهم في تعظيم الأثر لخدمة ضيوف الرحمن.</p>
             </div>
-            <div class="bg-white rounded-lg shadow-lg p-8 min-h-[500px] flex items-center justify-center">
-                <div class="text-center text-gray-500">
-                    <i class="fas fa-file-contract text-6xl mb-4"></i>
-                    <p class="text-xl">سيتم إضافة المحتوى هنا</p>
+
+            <!-- Strategic Goals -->
+            <section class="mb-12">
+                <header class="mb-6">
+                    <h2 class="text-2xl md:text-3xl font-bold text-primary curved-underline gold inline-block">الأهداف الإستراتيجية</h2>
+                </header>
+                <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+                    <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="w-10 h-10 rounded-full bg-primary/10 text-primary grid place-items-center"><i class="fa-solid fa-sparkles"></i></span>
+                            <h3 class="font-bold text-primary">تعزيز جودة الخدمات</h3>
+                        </div>
+                        <p class="text-sm text-gray-700">رفع كفاءة وجودة الخدمات المقدمة لضيوف الرحمن عبر معايير أداء واضحة وتطوير مستمر.</p>
+                    </div>
+                    <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="w-10 h-10 rounded-full bg-primary/10 text-primary grid place-items-center"><i class="fa-solid fa-handshake"></i></span>
+                            <h3 class="font-bold text-primary">توسيع الشراكات والأثر</h3>
+                        </div>
+                        <p class="text-sm text-gray-700">بناء شراكات فاعلة مع الجهات ذات العلاقة لتعظيم الأثر وتوسيع نطاق الاستفادة.</p>
+                    </div>
+                    <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="w-10 h-10 rounded-full bg-primary/10 text-primary grid place-items-center"><i class="fa-solid fa-microchip"></i></span>
+                            <h3 class="font-bold text-primary">الابتكار والتحول الرقمي</h3>
+                        </div>
+                        <p class="text-sm text-gray-700">تطوير حلول رقمية مبتكرة تُحسن تجربة المستفيد وترفع كفاءة العمليات.</p>
+                    </div>
+                    <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="w-10 h-10 rounded-full bg-primary/10 text-primary grid place-items-center"><i class="fa-solid fa-seedling"></i></span>
+                            <h3 class="font-bold text-primary">الاستدامة المؤسسية</h3>
+                        </div>
+                        <p class="text-sm text-gray-700">تعزيز الاستدامة المالية والتنظيمية عبر تنويع الموارد وتحسين الكفاءة التشغيلية.</p>
+                    </div>
                 </div>
-            </div>
+            </section>
+
+            <!-- Operational Goals -->
+            <section>
+                <header class="mb-6">
+                    <h2 class="text-2xl md:text-3xl font-bold text-primary curved-underline gold inline-block">الأهداف التشغيلية</h2>
+                </header>
+                <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                    <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="w-10 h-10 rounded-full bg-primary/10 text-primary grid place-items-center"><i class="fa-solid fa-book-open"></i></span>
+                            <h3 class="font-bold text-primary">تطوير الأدلة والمعايير</h3>
+                        </div>
+                        <p class="text-sm text-gray-700">إصدار وتحديث أدلة وإجراءات تشغيل موحدة لضمان الاتساق والجودة.</p>
+                    </div>
+                    <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="w-10 h-10 rounded-full bg-primary/10 text-primary grid place-items-center"><i class="fa-solid fa-chalkboard-user"></i></span>
+                            <h3 class="font-bold text-primary">بناء القدرات والتدريب</h3>
+                        </div>
+                        <p class="text-sm text-gray-700">تنفيذ برامج تدريبية متخصصة للفرق والعاملين والمتطوعين.</p>
+                    </div>
+                    <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="w-10 h-10 rounded-full bg-primary/10 text-primary grid place-items-center"><i class="fa-solid fa-people-group"></i></span>
+                            <h3 class="font-bold text-primary">إدارة المتطوعين</h3>
+                        </div>
+                        <p class="text-sm text-gray-700">استقطاب وتفعيل وتمكين المتطوعين وفق مسارات واضحة وأدوار محددة.</p>
+                    </div>
+                    <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="w-10 h-10 rounded-full bg-primary/10 text-primary grid place-items-center"><i class="fa-solid fa-face-smile"></i></span>
+                            <h3 class="font-bold text-primary">تحسين تجربة المستفيد</h3>
+                        </div>
+                        <p class="text-sm text-gray-700">تصميم رحلات مستفيد متميزة والإنصات للملاحظات وتحسين الخدمات باستمرار.</p>
+                    </div>
+                    <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="w-10 h-10 rounded-full bg-primary/10 text-primary grid place-items-center"><i class="fa-solid fa-chart-line"></i></span>
+                            <h3 class="font-bold text-primary">قياس الأداء والأثر</h3>
+                        </div>
+                        <p class="text-sm text-gray-700">تطبيق مؤشرات أداء رئيسية ولوحات متابعة لقياس الأثر وتحسين القرار.</p>
+                    </div>
+                    <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="w-10 h-10 rounded-full bg-primary/10 text-primary grid place-items-center"><i class="fa-solid fa-shield-heart"></i></span>
+                            <h3 class="font-bold text-primary">الحوكمة والامتثال</h3>
+                        </div>
+                        <p class="text-sm text-gray-700">تعزيز الشفافية والالتزام بالأنظمة والسياسات لضمان الثقة والاستدامة.</p>
+                    </div>
+                </div>
+
+                <div class="mt-10 flex flex-wrap gap-3">
+                    <a href="strategicMap.html" class="bg-primary text-white px-5 py-3 rounded-xl font-semibold hover:bg-primary/90 transition-colors"><i class="fa-solid fa-diagram-project ml-2"></i> الخارطة الإستراتيجية</a>
+                    <a href="message.html" class="btn-accent px-5 py-3 rounded-xl font-semibold hover:brightness-95 transition-colors"><i class="fa-solid fa-message ml-2"></i> رسالتنا</a>
+                </div>
+            </section>
         </div>
-    </main>
+    </section>
+</main>
 
     <!-- Footer -->
     <footer class="bg-primary text-white">
@@ -1649,549 +1763,551 @@
             });
         });
     </script>
-    
 
-    <script>
+
+<script>
       
-        // DOM Content Loaded Event
-        document.addEventListener('DOMContentLoaded', function() {
+    // DOM Content Loaded Event
+    document.addEventListener('DOMContentLoaded', function() {
+        
+        // ========== DROPDOWN MENU FUNCTIONALITY ==========
+        const dropdowns = document.querySelectorAll('.dropdown');
+        dropdowns.forEach(dropdown => {
+            const button = dropdown.querySelector('button');
+            const content = dropdown.querySelector('.dropdown-content');
             
-            // ========== DROPDOWN MENU FUNCTIONALITY ==========
-            const dropdowns = document.querySelectorAll('.dropdown');
-            dropdowns.forEach(dropdown => {
-                const button = dropdown.querySelector('button');
-                const content = dropdown.querySelector('.dropdown-content');
+            // Show dropdown on mouse enter
+            dropdown.addEventListener('mouseenter', function() {
+                // Close other dropdowns
+                dropdowns.forEach(otherDropdown => {
+                    if (otherDropdown !== dropdown) {
+                        otherDropdown.querySelector('.dropdown-content').style.display = 'none';
+                        otherDropdown.querySelector('button').setAttribute('aria-expanded', 'false');
+                    }
+                });
                 
-                // Show dropdown on mouse enter
-                dropdown.addEventListener('mouseenter', function() {
-                    // Close other dropdowns
-                    dropdowns.forEach(otherDropdown => {
-                        if (otherDropdown !== dropdown) {
-                            otherDropdown.querySelector('.dropdown-content').style.display = 'none';
-                            otherDropdown.querySelector('button').setAttribute('aria-expanded', 'false');
-                        }
+                // Show current dropdown
+                content.style.display = 'block';
+                button.setAttribute('aria-expanded', 'true');
+            });
+            
+            // Hide dropdown on mouse leave
+            dropdown.addEventListener('mouseleave', function() {
+                content.style.display = 'none';
+                button.setAttribute('aria-expanded', 'false');
+            });
+            
+            // Handle keyboard navigation for accessibility
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+            });
+        });
+    
+        // ========== MOBILE MENU FUNCTIONALITY ==========
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.toggle('fa-bars');
+                icon.classList.toggle('fa-times');
+                
+                // Reset all mobile dropdowns to hidden when opening menu
+                if (!mobileMenu.classList.contains('hidden')) {
+                    const allMobileDropdowns = mobileMenu.querySelectorAll('.mobile-dropdown-content');
+                    allMobileDropdowns.forEach(dropdown => {
+                        dropdown.classList.add('hidden');
                     });
-                    
-                    // Show current dropdown
-                    content.style.display = 'block';
-                    button.setAttribute('aria-expanded', 'true');
-                });
+                }
+            });
+        }
+    
+        // ========== HERO CAROUSEL FUNCTIONALITY ==========
+        const heroSlides = document.querySelectorAll('.hero-slide');
+        let currentSlide = 0;
+    
+        function showSlide(index) {
+            heroSlides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                }
+            });
+        }
+    
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % heroSlides.length;
+            showSlide(currentSlide);
+        }
+    
+        // Auto-advance carousel every 3 seconds
+        if (heroSlides.length > 0) {
+            setInterval(nextSlide, 3000);
+        }
+    
+        // ========== NEWS TICKER FUNCTIONALITY ==========
+        const newsTicker = document.getElementById('news-ticker');
+        if (newsTicker) {
+            let tickerPosition = 0;
+            const tickerSpeed = 1;
+    
+            function animateTicker() {
+                tickerPosition -= tickerSpeed;
+                if (tickerPosition <= -newsTicker.offsetWidth) {
+                    tickerPosition = newsTicker.parentElement.offsetWidth;
+                }
+                newsTicker.style.transform = `translateX(${tickerPosition}px)`;
+                requestAnimationFrame(animateTicker);
+            }
+    
+            animateTicker();
+        }
+    
+        // ========== MEDIA TABS FUNCTIONALITY ==========
+        const mediaTabs = document.querySelectorAll('.media-tab');
+        const mediaContents = document.querySelectorAll('.media-content');
+    
+        mediaTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                const targetTab = this.dataset.tab;
                 
-                // Hide dropdown on mouse leave
-                dropdown.addEventListener('mouseleave', function() {
-                    content.style.display = 'none';
-                    button.setAttribute('aria-expanded', 'false');
-                });
+                // Update active tab
+                mediaTabs.forEach(t => t.classList.remove('active', 'bg-white', 'text-[#432d17]'));
+                this.classList.add('active', 'bg-white', 'text-[#432d17]');
                 
-                // Handle keyboard navigation for accessibility
-                button.addEventListener('click', function(e) {
-                    e.preventDefault();
+                // Show/hide content
+                mediaContents.forEach(content => {
+                    if (content.id === targetTab) {
+                        content.classList.remove('hidden');
+                    } else {
+                        content.classList.add('hidden');
+                    }
                 });
             });
-        
-            // ========== MOBILE MENU FUNCTIONALITY ==========
-            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-            const mobileMenu = document.getElementById('mobile-menu');
-            
-            if (mobileMenuBtn && mobileMenu) {
-                mobileMenuBtn.addEventListener('click', function() {
-                    mobileMenu.classList.toggle('hidden');
-                    const icon = mobileMenuBtn.querySelector('i');
-                    icon.classList.toggle('fa-bars');
-                    icon.classList.toggle('fa-times');
-                    
-                    // Reset all mobile dropdowns to hidden when opening menu
-                    if (!mobileMenu.classList.contains('hidden')) {
-                        const allMobileDropdowns = mobileMenu.querySelectorAll('.mobile-dropdown-content');
-                        allMobileDropdowns.forEach(dropdown => {
-                            dropdown.classList.add('hidden');
-                        });
-                    }
-                });
+        });
+    
+        // ========== LIGHTBOX FUNCTIONALITY ==========
+        const lightboxTriggers = document.querySelectorAll('.lightbox-trigger');
+        let lightboxModal = null;
+    
+        function createLightbox(src, title) {
+            // Remove existing lightbox if any
+            if (lightboxModal) {
+                lightboxModal.remove();
             }
-        
-            // ========== HERO CAROUSEL FUNCTIONALITY ==========
-            const heroSlides = document.querySelectorAll('.hero-slide');
-            let currentSlide = 0;
-        
-            function showSlide(index) {
-                heroSlides.forEach((slide, i) => {
-                    slide.classList.remove('active');
-                    if (i === index) {
-                        slide.classList.add('active');
-                    }
-                });
-            }
-        
-            function nextSlide() {
-                currentSlide = (currentSlide + 1) % heroSlides.length;
-                showSlide(currentSlide);
-            }
-        
-            // Auto-advance carousel every 3 seconds
-            if (heroSlides.length > 0) {
-                setInterval(nextSlide, 3000);
-            }
-        
-            // ========== NEWS TICKER FUNCTIONALITY ==========
-            const newsTicker = document.getElementById('news-ticker');
-            if (newsTicker) {
-                let tickerPosition = 0;
-                const tickerSpeed = 1;
-        
-                function animateTicker() {
-                    tickerPosition -= tickerSpeed;
-                    if (tickerPosition <= -newsTicker.offsetWidth) {
-                        tickerPosition = newsTicker.parentElement.offsetWidth;
-                    }
-                    newsTicker.style.transform = `translateX(${tickerPosition}px)`;
-                    requestAnimationFrame(animateTicker);
-                }
-        
-                animateTicker();
-            }
-        
-            // ========== MEDIA TABS FUNCTIONALITY ==========
-            const mediaTabs = document.querySelectorAll('.media-tab');
-            const mediaContents = document.querySelectorAll('.media-content');
-        
-            mediaTabs.forEach(tab => {
-                tab.addEventListener('click', function() {
-                    const targetTab = this.dataset.tab;
-                    
-                    // Update active tab
-                    mediaTabs.forEach(t => t.classList.remove('active', 'bg-white', 'text-[#432d17]'));
-                    this.classList.add('active', 'bg-white', 'text-[#432d17]');
-                    
-                    // Show/hide content
-                    mediaContents.forEach(content => {
-                        if (content.id === targetTab) {
-                            content.classList.remove('hidden');
-                        } else {
-                            content.classList.add('hidden');
-                        }
-                    });
-                });
-            });
-        
-            // ========== LIGHTBOX FUNCTIONALITY ==========
-            const lightboxTriggers = document.querySelectorAll('.lightbox-trigger');
-            let lightboxModal = null;
-        
-            function createLightbox(src, title) {
-                // Remove existing lightbox if any
-                if (lightboxModal) {
-                    lightboxModal.remove();
-                }
-        
-                // Create lightbox modal
-                lightboxModal = document.createElement('div');
-                lightboxModal.className = 'fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4';
-                lightboxModal.innerHTML = `
-                    <div class="relative max-w-4xl max-h-full">
-                        <img src="${src}" alt="${title}" class="max-w-full max-h-full object-contain">
-                        <button class="absolute top-4 right-4 text-white text-2xl hover:text-gray-300 lightbox-close">
-                            <i class="fas fa-times"></i>
-                        </button>
-                        <div class="absolute bottom-4 left-4 text-white bg-black bg-opacity-50 px-4 py-2 rounded">
-                            <h3 class="font-semibold">${title}</h3>
-                        </div>
+    
+            // Create lightbox modal
+            lightboxModal = document.createElement('div');
+            lightboxModal.className = 'fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4';
+            lightboxModal.innerHTML = `
+                <div class="relative max-w-4xl max-h-full">
+                    <img src="${src}" alt="${title}" class="max-w-full max-h-full object-contain">
+                    <button class="absolute top-4 right-4 text-white text-2xl hover:text-gray-300 lightbox-close">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <div class="absolute bottom-4 left-4 text-white bg-black bg-opacity-50 px-4 py-2 rounded">
+                        <h3 class="font-semibold">${title}</h3>
                     </div>
-                `;
-        
-                document.body.appendChild(lightboxModal);
-        
-                // Close lightbox functionality
-                const closeBtn = lightboxModal.querySelector('.lightbox-close');
-                closeBtn.addEventListener('click', closeLightbox);
-                
-                lightboxModal.addEventListener('click', function(e) {
-                    if (e.target === lightboxModal) {
-                        closeLightbox();
-                    }
-                });
-        
-                // ESC key to close
-                document.addEventListener('keydown', function(e) {
-                    if (e.key === 'Escape') {
-                        closeLightbox();
-                    }
-                });
-            }
-        
-            function closeLightbox() {
-                if (lightboxModal) {
-                    lightboxModal.remove();
-                    lightboxModal = null;
+                </div>
+            `;
+    
+            document.body.appendChild(lightboxModal);
+    
+            // Close lightbox functionality
+            const closeBtn = lightboxModal.querySelector('.lightbox-close');
+            closeBtn.addEventListener('click', closeLightbox);
+            
+            lightboxModal.addEventListener('click', function(e) {
+                if (e.target === lightboxModal) {
+                    closeLightbox();
                 }
-            }
-        
-            lightboxTriggers.forEach(trigger => {
-                trigger.addEventListener('click', function() {
-                    const src = this.dataset.src;
-                    const title = this.querySelector('h3').textContent;
-                    createLightbox(src, title);
-                });
             });
-        
-            // ========== COUNTER ANIMATION ==========
-            const counters = document.querySelectorAll('.counter');
-            const counterObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const counter = entry.target;
-                        const target = parseInt(counter.dataset.target);
-                        // Make duration proportional to the target value (e.g., 10ms per unit, capped for very large numbers)
-                        let duration = Math.min(4000, Math.max(1200, target * 10)); // 10ms per unit, min 1.2s, max 4s
-                        if (target > 10000) duration = Math.min(6000, target * 0.2); // For very large numbers, slow down a bit more
-                        const step = target / (duration / 16); // 60fps
-                        let current = 0;
-        
-                        counter.style.transition = 'transform 0.3s cubic-bezier(.68,-0.55,.27,1.55), color 0.3s';
-                        counter.style.transform = 'scale(1.2)';
-                        counter.style.color = 'white';
-        
-                        setTimeout(() => {
-                            counter.style.transform = 'scale(1)';
-                        }, 300);
-        
-                        const updateCounter = () => {
-                            if (current < target) {
-                                current += step;
-                                counter.textContent = Math.floor(current).toLocaleString('en-US');
-                                // Add a bounce effect every 20% progress
-                                if (target > 0 && Math.abs(current % (target / 5)) < step) {
-                                    counter.style.transform = 'scale(1.15)';
-                                    setTimeout(() => {
-                                        counter.style.transform = 'scale(1)';
-                                    }, 120);
-                                }
-                                requestAnimationFrame(updateCounter);
-                            } else {
-                                counter.textContent = target.toLocaleString('en-US');
-                                counter.style.transform = 'scale(1.1)';
+    
+            // ESC key to close
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeLightbox();
+                }
+            });
+        }
+    
+        function closeLightbox() {
+            if (lightboxModal) {
+                lightboxModal.remove();
+                lightboxModal = null;
+            }
+        }
+    
+        lightboxTriggers.forEach(trigger => {
+            trigger.addEventListener('click', function() {
+                const src = this.dataset.src;
+                const title = this.querySelector('h3').textContent;
+                createLightbox(src, title);
+            });
+        });
+    
+        // ========== COUNTER ANIMATION ==========
+        const counters = document.querySelectorAll('.counter');
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counter = entry.target;
+                    const target = parseInt(counter.dataset.target);
+                    // Make duration proportional to the target value (e.g., 10ms per unit, capped for very large numbers)
+                    let duration = Math.min(4000, Math.max(1200, target * 10)); // 10ms per unit, min 1.2s, max 4s
+                    if (target > 10000) duration = Math.min(6000, target * 0.2); // For very large numbers, slow down a bit more
+                    const step = target / (duration / 16); // 60fps
+                    let current = 0;
+    
+                    counter.style.transition = 'transform 0.3s cubic-bezier(.68,-0.55,.27,1.55), color 0.3s';
+                    counter.style.transform = 'scale(1.2)';
+                    counter.style.color = 'white';
+    
+                    setTimeout(() => {
+                        counter.style.transform = 'scale(1)';
+                    }, 300);
+    
+                    const updateCounter = () => {
+                        if (current < target) {
+                            current += step;
+                            counter.textContent = Math.floor(current).toLocaleString('en-US');
+                            // Add a bounce effect every 20% progress
+                            if (target > 0 && Math.abs(current % (target / 5)) < step) {
+                                counter.style.transform = 'scale(1.15)';
                                 setTimeout(() => {
                                     counter.style.transform = 'scale(1)';
-                                }, 200);
+                                }, 120);
                             }
-                        };
-        
-                        updateCounter();
-                        counterObserver.unobserve(counter);
-                    }
-                });
-            });
-        
-            counters.forEach(counter => {
-                counterObserver.observe(counter);
-            });
-        
-            // ========== PARTNERS CAROUSEL ==========
-            const partnerScroll = document.querySelector('.partner-scroll');
-            if (partnerScroll) {
-                let scrollPosition = 0;
-                const scrollSpeed = 1;
-        
-                function animatePartners() {
-                    scrollPosition -= scrollSpeed;
-                    if (scrollPosition <= -partnerScroll.scrollWidth / 2) {
-                        scrollPosition = 0;
-                    }
-                    partnerScroll.style.transform = `translateX(${scrollPosition}px)`;
-                    requestAnimationFrame(animatePartners);
-                }
-        
-                animatePartners();
-            }
-        
-            // ========== FADE IN ANIMATION ==========
-            const fadeElements = document.querySelectorAll('.fade-in');
-            const fadeObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        // Element is in view - animate in
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    } else {
-                        // Element is out of view - reset for next animation
-                        entry.target.style.opacity = '0';
-                        entry.target.style.transform = 'translateY(30px)';
-                    }
-                });
-            }, {
-                threshold: 0.1
-            });
-        
-            fadeElements.forEach(element => {
-                element.style.opacity = '0';
-                element.style.transform = 'translateY(30px)';
-                element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                fadeObserver.observe(element);
-            });
-        
-            // ========== CONTACT FORM FUNCTIONALITY ==========
-            const contactForm = document.querySelector('#contact form');
-            if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    
-                    const formData = new FormData(this);
-                    const data = {
-                        name: formData.get('name'),
-                        email: formData.get('email'),
-                        subject: formData.get('subject'),
-                        message: formData.get('message')
-                    };
-        
-                    // Simple validation
-                    if (!data.name || !data.email || !data.message) {
-                        alert('يرجى ملء جميع الحقول المطلوبة');
-                        return;
-                    }
-        
-                    // Email validation
-                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                    if (!emailRegex.test(data.email)) {
-                        alert('يرجى إدخال بريد إلكتروني صحيح');
-                        return;
-                    }
-        
-                    // Simulate form submission
-                    const submitBtn = this.querySelector('button[type="submit"]');
-                    const originalText = submitBtn.textContent;
-                    submitBtn.textContent = 'جاري الإرسال...';
-                    submitBtn.disabled = true;
-        
-                    setTimeout(() => {
-                        submitBtn.textContent = 'تم الإرسال !';
-                        submitBtn.classList.add('bg-green-600');
-                        submitBtn.classList.remove('bg-[#432d17]');
-                        this.reset();
-                        
-                        // Reset button after 3 seconds
-                        setTimeout(() => {
-                            submitBtn.textContent = originalText;
-                            submitBtn.disabled = false;
-                            submitBtn.classList.remove('bg-green-600');
-                            submitBtn.classList.add('bg-[#432d17]');
-                        }, 3000);
-                    }, 2000);
-                });
-            }
-        
-            // ========== SCROLL TO TOP FUNCTIONALITY ==========
-            const scrollToTopBtn = document.getElementById('scroll-to-top') || (function(){
-                const btn = document.createElement('button');
-                btn.id = 'scroll-to-top';
-                btn.className = 'fixed bottom-6 left-6 bg-primary text-white w-12 h-12 rounded-full shadow-lg hover:bg-primary/90 transition-all duration-300 z-50';
-                btn.innerHTML = '<i class="fas fa-chevron-up"></i>';
-                document.body.appendChild(btn);
-                return btn;
-            })();
-            scrollToTopBtn.style.display = 'none';
-        
-            scrollToTopBtn.addEventListener('click', function() {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-        
-            window.addEventListener('scroll', function() {
-                if (window.pageYOffset > 300) {
-                    scrollToTopBtn.style.display = 'flex';
-                    scrollToTopBtn.style.alignItems = 'center';
-                    scrollToTopBtn.style.justifyContent = 'center';
-                } else {
-                    scrollToTopBtn.style.display = 'none';
-                }
-            });
-        
-            // ========== SMOOTH SCROLLING FOR ANCHOR LINKS ==========
-            const anchorLinks = document.querySelectorAll('a[href^="#"]');
-            anchorLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
-            });
-        
-            // ========== SERVICE CARDS INTERACTIONS ==========
-            const serviceCards = document.querySelectorAll('.hero-content .grid > div, .grid.grid-cols-2.md\\:grid-cols-4.lg\\:grid-cols-6 > div');
-            serviceCards.forEach(card => {
-                card.addEventListener('click', function() {
-                    const serviceName = this.querySelector('h3').textContent;
-                    alert(`سيتم توجيهكم إلى صفحة ${serviceName} قريباً`);
-                });
-            });
-        
-            // ========== ACCESSIBILITY ENHANCEMENTS ==========
-            
-            // Keyboard navigation for dropdowns
-            dropdowns.forEach(dropdown => {
-                const button = dropdown.querySelector('button');
-                const links = dropdown.querySelectorAll('a');
-                
-                button.addEventListener('keydown', function(e) {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault();
-                        this.click();
-                    } else if (e.key === 'ArrowDown') {
-                        e.preventDefault();
-                        const content = dropdown.querySelector('.dropdown-content');
-                        if (content.style.display === 'block') {
-                            const firstLink = content.querySelector('a');
-                            if (firstLink) firstLink.focus();
+                            requestAnimationFrame(updateCounter);
+                        } else {
+                            counter.textContent = target.toLocaleString('en-US');
+                            counter.style.transform = 'scale(1.1)';
+                            setTimeout(() => {
+                                counter.style.transform = 'scale(1)';
+                            }, 200);
                         }
-                    }
-                });
+                    };
+    
+                    updateCounter();
+                    counterObserver.unobserve(counter);
+                }
+            });
+        });
+    
+        counters.forEach(counter => {
+            counterObserver.observe(counter);
+        });
+    
+        // ========== PARTNERS CAROUSEL ==========
+        const partnerScroll = document.querySelector('.partner-scroll');
+        if (partnerScroll) {
+            let scrollPosition = 0;
+            const scrollSpeed = 1;
+    
+            function animatePartners() {
+                scrollPosition -= scrollSpeed;
+                if (scrollPosition <= -partnerScroll.scrollWidth / 2) {
+                    scrollPosition = 0;
+                }
+                partnerScroll.style.transform = `translateX(${scrollPosition}px)`;
+                requestAnimationFrame(animatePartners);
+            }
+    
+            animatePartners();
+        }
+    
+        // ========== FADE IN ANIMATION ==========
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Element is in view - animate in
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                } else {
+                    // Element is out of view - reset for next animation
+                    entry.target.style.opacity = '0';
+                    entry.target.style.transform = 'translateY(30px)';
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+    
+        fadeElements.forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            fadeObserver.observe(element);
+        });
+    
+        // ========== CONTACT FORM FUNCTIONALITY ==========
+        const contactForm = document.querySelector('#contact form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const formData = new FormData(this);
+                const data = {
+                    name: formData.get('name'),
+                    email: formData.get('email'),
+                    subject: formData.get('subject'),
+                    message: formData.get('message')
+                };
+    
+                // Simple validation
+                if (!data.name || !data.email || !data.message) {
+                    alert('يرجى ملء جميع الحقول المطلوبة');
+                    return;
+                }
+    
+                // Email validation
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(data.email)) {
+                    alert('يرجى إدخال بريد إلكتروني صحيح');
+                    return;
+                }
+    
+                // Simulate form submission
+                const submitBtn = this.querySelector('button[type="submit"]');
+                const originalText = submitBtn.textContent;
+                submitBtn.textContent = 'جاري الإرسال...';
+                submitBtn.disabled = true;
+    
+                setTimeout(() => {
+                    submitBtn.textContent = 'تم الإرسال !';
+                    submitBtn.classList.add('bg-green-600');
+                    submitBtn.classList.remove('bg-[#432d17]');
+                    this.reset();
+                    
+                    // Reset button after 3 seconds
+                    setTimeout(() => {
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+                        submitBtn.classList.remove('bg-green-600');
+                        submitBtn.classList.add('bg-[#432d17]');
+                    }, 3000);
+                }, 2000);
+            });
+        }
+    
+        // ========== SCROLL TO TOP FUNCTIONALITY ==========
+        let scrollToTopBtn = document.getElementById('scroll-to-top');
+        if (!scrollToTopBtn) {
+            scrollToTopBtn = document.createElement('button');
+            scrollToTopBtn.id = 'scroll-to-top';
+            scrollToTopBtn.className = 'fixed bottom-6 left-6 bg-primary text-white w-12 h-12 rounded-full shadow-lg hover:bg-primary/90 transition-all duration-300 z-50';
+            scrollToTopBtn.innerHTML = '<i class="fas fa-chevron-up"></i>';
+            document.body.appendChild(scrollToTopBtn);
+        } else {
+            scrollToTopBtn.className = 'fixed bottom-6 left-6 bg-primary text-white w-12 h-12 rounded-full shadow-lg hover:bg-primary/90 transition-all duration-300 z-50';
+        }
+        scrollToTopBtn.style.display = 'none';
+    
+        scrollToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.style.display = 'flex';
+                scrollToTopBtn.style.alignItems = 'center';
+                scrollToTopBtn.style.justifyContent = 'center';
+            } else {
+                scrollToTopBtn.style.display = 'none';
+            }
+        });
+    
+        // ========== SMOOTH SCROLLING FOR ANCHOR LINKS ==========
+        const anchorLinks = document.querySelectorAll('a[href^="#"]');
+        anchorLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    
+        // ========== SERVICE CARDS INTERACTIONS ==========
+        const serviceCards = document.querySelectorAll('.hero-content .grid > div, .grid.grid-cols-2.md\\:grid-cols-4.lg\\:grid-cols-6 > div');
+        serviceCards.forEach(card => {
+            card.addEventListener('click', function() {
+                const serviceName = this.querySelector('h3').textContent;
+                alert(`سيتم توجيهكم إلى صفحة ${serviceName} قريباً`);
+            });
+        });
+    
+        // ========== ACCESSIBILITY ENHANCEMENTS ==========
         
-                links.forEach((link, index) => {
-                    link.addEventListener('keydown', function(e) {
-                        if (e.key === 'ArrowDown') {
-                            e.preventDefault();
-                            const nextLink = links[index + 1];
-                            if (nextLink) nextLink.focus();
-                        } else if (e.key === 'ArrowUp') {
-                            e.preventDefault();
-                            const prevLink = links[index - 1];
-                            if (prevLink) {
-                                prevLink.focus();
-                            } else {
-                                button.focus();
-                            }
-                        } else if (e.key === 'Escape') {
-                            dropdown.querySelector('.dropdown-content').style.display = 'none';
-                            button.setAttribute('aria-expanded', 'false');
+        // Keyboard navigation for dropdowns
+        dropdowns.forEach(dropdown => {
+            const button = dropdown.querySelector('button');
+            const links = dropdown.querySelectorAll('a');
+            
+            button.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    this.click();
+                } else if (e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    const content = dropdown.querySelector('.dropdown-content');
+                    if (content.style.display === 'block') {
+                        const firstLink = content.querySelector('a');
+                        if (firstLink) firstLink.focus();
+                    }
+                }
+            });
+    
+            links.forEach((link, index) => {
+                link.addEventListener('keydown', function(e) {
+                    if (e.key === 'ArrowDown') {
+                        e.preventDefault();
+                        const nextLink = links[index + 1];
+                        if (nextLink) nextLink.focus();
+                    } else if (e.key === 'ArrowUp') {
+                        e.preventDefault();
+                        const prevLink = links[index - 1];
+                        if (prevLink) {
+                            prevLink.focus();
+                        } else {
                             button.focus();
                         }
-                    });
+                    } else if (e.key === 'Escape') {
+                        dropdown.querySelector('.dropdown-content').style.display = 'none';
+                        button.setAttribute('aria-expanded', 'false');
+                        button.focus();
+                    }
                 });
             });
-        
-            // ========== MOBILE MENU DROPDOWN FUNCTIONALITY ==========
-            const mobileDropdowns = document.querySelectorAll('.mobile-dropdown');
-            mobileDropdowns.forEach(drop => {
-                const btn = drop.querySelector('button');
-                const content = drop.querySelector('.mobile-dropdown-content');
+        });
+    
+        // ========== MOBILE MENU DROPDOWN FUNCTIONALITY ==========
+        const mobileDropdowns = document.querySelectorAll('.mobile-dropdown');
+        mobileDropdowns.forEach(drop => {
+            const btn = drop.querySelector('button');
+            const content = drop.querySelector('.mobile-dropdown-content');
+            
+            // Handle dropdown button click (show/hide dropdown within mobile menu)
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
                 
-                // Handle dropdown button click (show/hide dropdown within mobile menu)
-                btn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    // Close other dropdowns
-                    mobileDropdowns.forEach(other => {
-                        if (other !== drop) {
-                            other.querySelector('.mobile-dropdown-content').classList.add('hidden');
-                        }
-                    });
-                    
-                    // Toggle current dropdown
-                    content.classList.toggle('hidden');
+                // Close other dropdowns
+                mobileDropdowns.forEach(other => {
+                    if (other !== drop) {
+                        other.querySelector('.mobile-dropdown-content').classList.add('hidden');
+                    }
                 });
                 
-                // Handle clicks on dropdown links (close mobile menu)
-                const dropdownLinks = content.querySelectorAll('a');
-                dropdownLinks.forEach(link => {
-                    link.addEventListener('click', function(e) {
-                        // Close mobile menu when a dropdown link is clicked
-                        mobileMenu.classList.add('hidden');
-                        const icon = mobileMenuBtn.querySelector('i');
-                        icon.classList.add('fa-bars');
-                        icon.classList.remove('fa-times');
-                        
-                        // Hide all dropdowns
-                        mobileDropdowns.forEach(dropdown => {
-                            dropdown.querySelector('.mobile-dropdown-content').classList.add('hidden');
-                        });
-                    });
-                });
+                // Toggle current dropdown
+                content.classList.toggle('hidden');
             });
-        
-            // ========== MOBILE MENU REGULAR LINKS ==========
-            const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
-            mobileMenuLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    // Close mobile menu when regular link is clicked
+            
+            // Handle clicks on dropdown links (close mobile menu)
+            const dropdownLinks = content.querySelectorAll('a');
+            dropdownLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    // Close mobile menu when a dropdown link is clicked
                     mobileMenu.classList.add('hidden');
                     const icon = mobileMenuBtn.querySelector('i');
                     icon.classList.add('fa-bars');
                     icon.classList.remove('fa-times');
-                });
-            });
-        
-            // ========== PERFORMANCE OPTIMIZATIONS ==========
-            
-            // Lazy loading for images (if supported)
-            if ('IntersectionObserver' in window) {
-                const lazyImages = document.querySelectorAll('img[data-src]');
-                const imageObserver = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            const img = entry.target;
-                            img.src = img.dataset.src;
-                            img.classList.remove('lazy');
-                            imageObserver.unobserve(img);
-                        }
+                    
+                    // Hide all dropdowns
+                    mobileDropdowns.forEach(dropdown => {
+                        dropdown.querySelector('.mobile-dropdown-content').classList.add('hidden');
                     });
                 });
-        
-                lazyImages.forEach(img => imageObserver.observe(img));
-            }
-        
-            // ========== ERROR HANDLING ==========
-            window.addEventListener('error', function(e) {
-                console.error('JavaScript Error:', e.error);
-                // Could send error to logging service here
             });
-        
-            // ========== INITIALIZATION COMPLETE ==========
-            
-            // Dispatch custom event to indicate site is ready
-            const siteReadyEvent = new CustomEvent('siteReady', {
-                detail: { message: 'الموقع جاهز للاستخدام' }
-            });
-            document.dispatchEvent(siteReadyEvent);
         });
-        
-        // ========== UTILITY FUNCTIONS ==========
-        
-        // Function to format numbers in Arabic
-        function formatArabicNumber(number) {
-            return number.toString().replace(/\d/g, function(d) {
-                return '٠١٢٣٤٥٦٧٨٩'[d];
+    
+        // ========== MOBILE MENU REGULAR LINKS ==========
+        const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                // Close mobile menu when regular link is clicked
+                mobileMenu.classList.add('hidden');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
             });
-        }
+        });
+    
+        // ========== PERFORMANCE OPTIMIZATIONS ==========
         
-        // Function to handle RTL text direction
-        function handleRTL() {
-            document.documentElement.setAttribute('dir', 'rtl');
-            document.documentElement.setAttribute('lang', 'ar');
+        // Lazy loading for images (if supported)
+        if ('IntersectionObserver' in window) {
+            const lazyImages = document.querySelectorAll('img[data-src]');
+            const imageObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.classList.remove('lazy');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+    
+            lazyImages.forEach(img => imageObserver.observe(img));
         }
+    
+        // ========== ERROR HANDLING ==========
+        window.addEventListener('error', function(e) {
+            console.error('JavaScript Error:', e.error);
+            // Could send error to logging service here
+        });
+    
+        // ========== INITIALIZATION COMPLETE ==========
         
-        // Function to detect if user prefers reduced motion
-        function respectsReducedMotion() {
-            return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        }
-        
-        // Apply reduced motion preferences
-        if (respectsReducedMotion()) {
-            const style = document.createElement('style');
-            style.textContent = `
-                *, *::before, *::after {
-                    animation-duration: 0.01ms !important;
-                    animation-iteration-count: 1 !important;
-                    transition-duration: 0.01ms !important;
-                }
-            `;
-            document.head.appendChild(style);
-        }; 
-            </script>
-        </body>
-        </html>
+        // Dispatch custom event to indicate site is ready
+        const siteReadyEvent = new CustomEvent('siteReady', {
+            detail: { message: 'الموقع جاهز للاستخدام' }
+        });
+        document.dispatchEvent(siteReadyEvent);
+    });
+    
+    // ========== UTILITY FUNCTIONS ==========
+    
+    // Function to format numbers in Arabic
+    function formatArabicNumber(number) {
+        return number.toString().replace(/\d/g, function(d) {
+            return '٠١٢٣٤٥٦٧٨٩'[d];
+        });
+    }
+    
+    // Function to handle RTL text direction
+    function handleRTL() {
+        document.documentElement.setAttribute('dir', 'rtl');
+        document.documentElement.setAttribute('lang', 'ar');
+    }
+    
+    // Function to detect if user prefers reduced motion
+    function respectsReducedMotion() {
+        return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    }
+    
+    // Apply reduced motion preferences
+    if (respectsReducedMotion()) {
+        const style = document.createElement('style');
+        style.textContent = `
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        `;
+        document.head.appendChild(style);
+    }; 
+        </script>
+    </body>
+    </html>

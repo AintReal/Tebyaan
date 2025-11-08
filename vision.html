@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>جمعية تبيان لخدمة ضيوف الرحمن - اللوائح والسياسات</title>
+    <title>رؤيتنا | جمعية تبيان لخدمة ضيوف الرحمن</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-   <link rel="stylesheet" href="theme.css">
-        <style>
+ <link rel="stylesheet" href="theme.css">
+    <style>
         :root {
             --color-primary: #0f5a4a;   /* logo deep green */
             --color-accent:  #a07a47;   /* logo gold/brown */
@@ -1317,17 +1317,11 @@
                 background: var(--color-accent) !important;
             }
         }
-        /* Mobile: achievements use site primary color background (force) */
+        /* Mobile: achievements transparent to reveal body background */
         @media (max-width: 768px) {
-            .achievements-bg,
-            .achievements-bg::before,
-            .achievements-bg::after {
-                background-color: var(--color-primary) !important;
+            .achievements-bg {
+                background: transparent !important;
                 background-image: none !important;
-                background: var(--color-primary) !important;
-                background-repeat: no-repeat !important;
-                background-size: auto !important;
-                background-position: initial !important;
             }
         }
         /* Ensure the News Highlights section (#news) stays primary green on phones */
@@ -1411,7 +1405,8 @@
                             التقارير <i class="fas fa-chevron-down mr-1 text-xs"></i>
                         </button>
                         <div class="dropdown-content">
-                            <a href="annual-report-2024.html" class="block px-4 py-2 text-gray-700 hover:bg-[#6e1948]/10"><i class="fas fa-file-alt ml-2 text-[#6e1948]"></i>التقرير السنوي لعام 2024</a>
+                            <a href="annual-report-2025.html" class="block px-4 py-2 text-gray-700 hover:bg-[#6e1948]/10"><i class="fas fa-file-alt ml-2 text-[#6e1948]"></i>التقرير السنوي لعام 2024</a>
+                            <a href="assets/القوائم المالية لجمعية تبيان لخدمة ضيوف الرحمن للفترة المنتهية في 31 ديسمبر 2024 -1.pdf" class="block px-4 py-2 text-gray-700 hover:bg-[#6e1948]/10"><i class="fas fa-file-invoice ml-2 text-[#6e1948]"></i>القوائم المالية لعام 2024</a>
                         </div>
                     </div>
                     
@@ -1433,7 +1428,7 @@
                             الحوكمة <i class="fas fa-chevron-down mr-1 text-xs"></i>
                         </button>
                         <div class="dropdown-content">
-                            <a href="hawkamah.html" class="block px-4 py-2 text-gray-700 hover:bg-[#6e1948]/10"><i class="fas fa-book ml-2 text-[#6e1948]"></i>ادلة الحوكمة</a>
+                            <a href="/hawkamah" class="block px-4 py-2 text-gray-700 hover:bg-[#6e1948]/10"><i class="fas fa-book ml-2 text-[#6e1948]"></i>ادلة الحوكمة</a>
                             <a href="privacy-policy.html" class="block px-4 py-2 text-gray-700 hover:bg-[#6e1948]/10"><i class="fas fa-shield-alt ml-2 text-[#6e1948]"></i>سياسة الخصوصية</a>
                         </div>
                     </div>
@@ -1503,7 +1498,8 @@
                         التقارير <i class="fas fa-chevron-down"></i>
                     </button>
                     <div class="mobile-dropdown-content hidden pl-4 space-y-1">
-                        <a href="annual-report-2024.html" class="block py-3 text-gray-700 hover:bg-[#6e1948]/10 rounded-lg"><i class="fas fa-file-alt ml-2 text-[#6e1948]"></i>التقرير السنوي لعام 2024</a>
+                        <a href="annual-report-2025.html" class="block py-3 text-gray-700 hover:bg-[#6e1948]/10 rounded-lg"><i class="fas fa-file-alt ml-2 text-[#6e1948]"></i>التقرير السنوي لعام 2024</a>
+                        <a href="assets/القوائم المالية لجمعية تبيان لخدمة ضيوف الرحمن للفترة المنتهية في 31 ديسمبر 2024 -1.pdf" class="block py-3 text-gray-700 hover:bg-[#6e1948]/10 rounded-lg"><i class="fas fa-file-invoice ml-2 text-[#6e1948]"></i>القوائم المالية لعام 2024</a>
                     </div>
                 </div>
                 <div class="mobile-dropdown">
@@ -1521,7 +1517,7 @@
                         الحوكمة <i class="fas fa-chevron-down"></i>
                     </button>
                     <div class="mobile-dropdown-content hidden pl-4 space-y-1">
-                        <a href="hawkamah.html" class="block py-3 text-gray-700 hover:bg-[#6e1948]/10 rounded-lg"><i class="fas fa-book ml-2 text-[#6e1948]"></i>ادلة الحوكمة</a>
+                        <a href="/hawkamah" class="block py-3 text-gray-700 hover:bg-[#6e1948]/10 rounded-lg"><i class="fas fa-book ml-2 text-[#6e1948]"></i>ادلة الحوكمة</a>
                         <a href="privacy-policy.html" class="block py-3 text-gray-700 hover:bg-[#6e1948]/10 rounded-lg"><i class="fas fa-shield-alt ml-2 text-[#6e1948]"></i>سياسة الخصوصية</a>
                     </div>
                 </div>
@@ -1539,22 +1535,61 @@
             </div>
         </div>
     </header>
-   
+<style>
+    /* Ensure no horizontal overflow */
+    * {
+        box-sizing: border-box;
+    }
+</style>
 
-    <main class="min-h-screen bg-white">
-        <div class="max-w-7xl mx-auto px-4 py-16">
-            <div class="text-center mb-12">
-                <h1 class="text-4xl font-bold text-[#00a17d] mb-4">اللوائح والسياسات</h1>
-                <p class="text-xl text-gray-600">اللوائح والسياسات لجمعية تبيان لخدمة ضيوف الرحمن</p>
+<main class="min-h-screen bg-white overflow-x-hidden">
+    <!-- Vision Section -->
+    <section class="py-16 bg-gray-50/70">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="section-header-container">
+                <h1 class="text-3xl md:text-4xl font-extrabold text-primary curved-underline gold">رؤيتنا</h1>
+                <p class="section-subtitle text-gray-600 max-w-2xl mx-auto">نطمح لأن نكون نموذجاً رائداً في خدمة ضيوف الرحمن، نُجسّد قيم العطاء والإتقان، ونقود مبادرات مؤثرة تُحدث فرقاً مستداماً في حياة الناس.</p>
             </div>
-            <div class="bg-white rounded-lg shadow-lg p-8 min-h-[500px] flex items-center justify-center">
-                <div class="text-center text-gray-500">
-                    <i class="fas fa-file-contract text-6xl mb-4"></i>
-                    <p class="text-xl">سيتم إضافة المحتوى هنا</p>
+
+            <div class="bg-white border border-gray-200 shadow-md rounded-2xl p-6 md:p-10 space-y-6 leading-relaxed text-gray-700">
+                <p class="text-lg md:text-xl font-semibold text-primary">أن تكون جمعية تبيان رائدة في تمكين منظومة خدمة ضيوف الرحمن عبر حلول مبتكرة وشراكات فاعلة وأعمال مؤسسية ذات أثر مستدام.</p>
+                <p>ترتكز رؤيتنا على بناء منظومة متكاملة من الخدمات المعرفية والمجتمعية المتخصصة، تُدار وفق أفضل ممارسات الحوكمة والشفافية، وتستثمر التقنيات الحديثة لرفع جودة التجربة وتحقيق رضا المستفيدين.</p>
+
+                <div class="grid md:grid-cols-3 gap-6 pt-4">
+                    <!-- Pillar 1 -->
+                    <div class="bg-primary/5 rounded-xl p-5 border border-primary/10">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="w-10 h-10 rounded-full bg-primary/10 text-primary grid place-items-center"><i class="fa-solid fa-star"></i></span>
+                            <h3 class="font-bold text-primary">التميز في الخدمة</h3>
+                        </div>
+                        <p class="text-sm text-gray-700">رفع جودة الخدمات وتجويد التجربة للمستفيدين وفق معايير قياس واضحة ومعلنة.</p>
+                    </div>
+                    <!-- Pillar 2 -->
+                    <div class="bg-primary/5 rounded-xl p-5 border border-primary/10">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="w-10 h-10 rounded-full bg-primary/10 text-primary grid place-items-center"><i class="fa-solid fa-handshake-angle"></i></span>
+                            <h3 class="font-bold text-primary">تمكين الشراكات</h3>
+                        </div>
+                        <p class="text-sm text-gray-700">تفعيل التعاون مع القطاعين العام والخاص والقطاع غير الربحي لتعظيم الأثر وتوسيع نطاق الاستفادة.</p>
+                    </div>
+                    <!-- Pillar 3 -->
+                    <div class="bg-primary/5 rounded-xl p-5 border border-primary/10">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="w-10 h-10 rounded-full bg-primary/10 text-primary grid place-items-center"><i class="fa-solid fa-leaf"></i></span>
+                            <h3 class="font-bold text-primary">الابتكار والاستدامة</h3>
+                        </div>
+                        <p class="text-sm text-gray-700">تبني الحلول الرقمية والممارسات المستدامة لضمان استمرارية الأثر وتحسين الكفاءة.</p>
+                    </div>
+                </div>
+
+                <div class="mt-8 flex flex-wrap gap-3">
+                    <a href="strategicMap.html" class="bg-primary text-white px-5 py-3 rounded-xl font-semibold hover:bg-primary/90 transition-colors"><i class="fa-solid fa-diagram-project ml-2"></i> الخارطة الإستراتيجية</a>
+                    <a href="goals.html" class="btn-accent px-5 py-3 rounded-xl font-semibold hover:brightness-95 transition-colors"><i class="fa-solid fa-bullseye ml-2"></i> الأهداف</a>
                 </div>
             </div>
         </div>
-    </main>
+    </section>
+</main>
 
     <!-- Footer -->
     <footer class="bg-primary text-white">

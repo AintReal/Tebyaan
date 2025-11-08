@@ -6,8 +6,8 @@
     <title>جمعية تبيان لخدمة ضيوف الرحمن - ملفات الحوكمة</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
- <link rel="stylesheet" href="theme.css">
-    <style>
+   <link rel="stylesheet" href="theme.css">
+        <style>
         :root {
             --color-primary: #0f5a4a;   /* logo deep green */
             --color-accent:  #a07a47;   /* logo gold/brown */
@@ -1317,11 +1317,17 @@
                 background: var(--color-accent) !important;
             }
         }
-        /* Mobile: achievements transparent to reveal body background */
+        /* Mobile: achievements use site primary color background (force) */
         @media (max-width: 768px) {
-            .achievements-bg {
-                background: transparent !important;
+            .achievements-bg,
+            .achievements-bg::before,
+            .achievements-bg::after {
+                background-color: var(--color-primary) !important;
                 background-image: none !important;
+                background: var(--color-primary) !important;
+                background-repeat: no-repeat !important;
+                background-size: auto !important;
+                background-position: initial !important;
             }
         }
         /* Ensure the News Highlights section (#news) stays primary green on phones */
@@ -1391,6 +1397,12 @@
                             <a href="board-of-directors.html" class="block px-4 py-2 text-gray-700 hover:bg-[#6e1948]/10"><i class="fas fa-user-tie ml-2 text-[#6e1948]"></i>قرار التأسيس</a>
                             <a href="organizational-structure.html" class="block px-4 py-2 text-gray-700 hover:bg-[#6e1948]/10"><i class="fas fa-sitemap ml-2 text-[#6e1948]"></i>الهيكل التنظيمي</a>
                             <a href="work-team.html" class="block px-4 py-2 text-gray-700 hover:bg-[#6e1948]/10"><i class="fas fa-user-friends ml-2 text-[#6e1948]"></i>اعضاء مجلس الإدارة</a>
+                            <a href="message.html" class="block px-4 py-2 text-gray-700 hover:bg-[#6e1948]/10"><i class="fas fa-comment-dots ml-2 text-[#6e1948]"></i>رسالتنا</a>
+                            <a href="vision.html" class="block px-4 py-2 text-gray-700 hover:bg-[#6e1948]/10"><i class="fas fa-eye ml-2 text-[#6e1948]"></i>رؤيتنا</a>
+                            <a href="strategicMap.html" class="block px-4 py-2 text-gray-700 hover:bg-[#6e1948]/10"><i class="fas fa-map ml-2 text-[#6e1948]"></i>الخارطة الإستراتيجية</a>
+                            <a href="goals.html" class="block px-4 py-2 text-gray-700 hover:bg-[#6e1948]/10"><i class="fas fa-bullseye ml-2 text-[#6e1948]"></i>الأهداف</a>
+                            <a href="mainBoard.html" class="block px-4 py-2 text-gray-700 hover:bg-[#6e1948]/10"><i class="fas fa-scroll ml-2 text-[#6e1948]"></i>اللائحة</a>
+                            <a href="contact.html" class="block px-4 py-2 text-gray-700 hover:bg-[#6e1948]/10"><i class="fas fa-envelope-open-text ml-2 text-[#6e1948]"></i>تواصل معنا</a>
                         </div>
                     </div>
                     
@@ -1399,7 +1411,7 @@
                             التقارير <i class="fas fa-chevron-down mr-1 text-xs"></i>
                         </button>
                         <div class="dropdown-content">
-                            <a href="annual-report-2025.html" class="block px-4 py-2 text-gray-700 hover:bg-[#6e1948]/10"><i class="fas fa-file-alt ml-2 text-[#6e1948]"></i>التقرير السنوي لعام 2025</a>
+                            <a href="annual-report-2024.html" class="block px-4 py-2 text-gray-700 hover:bg-[#6e1948]/10"><i class="fas fa-file-alt ml-2 text-[#6e1948]"></i>التقرير السنوي لعام 2024</a>
                         </div>
                     </div>
                     
@@ -1421,7 +1433,7 @@
                             الحوكمة <i class="fas fa-chevron-down mr-1 text-xs"></i>
                         </button>
                         <div class="dropdown-content">
-                            <a href="assets/Hawkamah.rar" download class="block px-4 py-2 text-gray-700 hover:bg-[#6e1948]/10"><i class="fas fa-book ml-2 text-[#6e1948]"></i>ادلة الحوكمة</a>
+                            <a href="hawkamah.html" class="block px-4 py-2 text-gray-700 hover:bg-[#6e1948]/10"><i class="fas fa-book ml-2 text-[#6e1948]"></i>ادلة الحوكمة</a>
                             <a href="privacy-policy.html" class="block px-4 py-2 text-gray-700 hover:bg-[#6e1948]/10"><i class="fas fa-shield-alt ml-2 text-[#6e1948]"></i>سياسة الخصوصية</a>
                         </div>
                     </div>
@@ -1478,6 +1490,12 @@
                         <a href="board-of-directors.html" class="block py-3 text-gray-700 hover:bg-[#6e1948]/10 rounded-lg"><i class="fas fa-user-tie ml-2 text-[#6e1948]"></i>قرار التأسيس</a>
                         <a href="organizational-structure.html" class="block py-3 text-gray-700 hover:bg-[#6e1948]/10 rounded-lg"><i class="fas fa-sitemap ml-2 text-[#6e1948]"></i>الهيكل التنظيمي</a>
                         <a href="work-team.html" class="block py-3 text-gray-700 hover:bg-[#6e1948]/10 rounded-lg"><i class="fas fa-user-friends ml-2 text-[#6e1948]"></i>اعضاء مجلس الإدارة</a>
+                        <a href="message.html" class="block py-3 text-gray-700 hover:bg-[#6e1948]/10 rounded-lg"><i class="fas fa-comment-dots ml-2 text-[#6e1948]"></i>رسالتنا</a>
+                        <a href="vision.html" class="block py-3 text-gray-700 hover:bg-[#6e1948]/10 rounded-lg"><i class="fas fa-eye ml-2 text-[#6e1948]"></i>رؤيتنا</a>
+                        <a href="strategicMap.html" class="block py-3 text-gray-700 hover:bg-[#6e1948]/10 rounded-lg"><i class="fas fa-map ml-2 text-[#6e1948]"></i>الخارطة الإستراتيجية</a>
+                        <a href="goals.html" class="block py-3 text-gray-700 hover:bg-[#6e1948]/10 rounded-lg"><i class="fas fa-bullseye ml-2 text-[#6e1948]"></i>الأهداف</a>
+                        <a href="mainBoard.html" class="block py-3 text-gray-700 hover:bg-[#6e1948]/10 rounded-lg"><i class="fas fa-scroll ml-2 text-[#6e1948]"></i>اللائحة</a>
+                        <a href="contact.html" class="block py-3 text-gray-700 hover:bg-[#6e1948]/10 rounded-lg"><i class="fas fa-envelope-open-text ml-2 text-[#6e1948]"></i>تواصل معنا</a>
                     </div>
                 </div>
                 <div class="mobile-dropdown">
@@ -1485,7 +1503,7 @@
                         التقارير <i class="fas fa-chevron-down"></i>
                     </button>
                     <div class="mobile-dropdown-content hidden pl-4 space-y-1">
-                        <a href="annual-report-2025.html" class="block py-3 text-gray-700 hover:bg-[#6e1948]/10 rounded-lg"><i class="fas fa-file-alt ml-2 text-[#6e1948]"></i>التقرير السنوي لعام 2025</a>
+                        <a href="annual-report-2024.html" class="block py-3 text-gray-700 hover:bg-[#6e1948]/10 rounded-lg"><i class="fas fa-file-alt ml-2 text-[#6e1948]"></i>التقرير السنوي لعام 2024</a>
                     </div>
                 </div>
                 <div class="mobile-dropdown">
@@ -1503,7 +1521,7 @@
                         الحوكمة <i class="fas fa-chevron-down"></i>
                     </button>
                     <div class="mobile-dropdown-content hidden pl-4 space-y-1">
-                        <a href="assets/Hawkamah.rar" download class="block py-3 text-gray-700 hover:bg-[#6e1948]/10 rounded-lg"><i class="fas fa-book ml-2 text-[#6e1948]"></i>ادلة الحوكمة</a>
+                        <a href="hawkamah.html" class="block py-3 text-gray-700 hover:bg-[#6e1948]/10 rounded-lg"><i class="fas fa-book ml-2 text-[#6e1948]"></i>ادلة الحوكمة</a>
                         <a href="privacy-policy.html" class="block py-3 text-gray-700 hover:bg-[#6e1948]/10 rounded-lg"><i class="fas fa-shield-alt ml-2 text-[#6e1948]"></i>سياسة الخصوصية</a>
                     </div>
                 </div>
